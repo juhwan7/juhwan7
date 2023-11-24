@@ -42,19 +42,11 @@
 
 </div>
 <br/>
-<br/>
 
-<br/>
-<br/>
+<div>
 
+[![Solved.ac프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=kjh71047)](https://solved.ac/{handle})
 [![GitHub Streak](https://streak-stats.demolab.com?user=juhwan7&hide_border=%EA%B1%B0%EC%A7%93&border_radius=20&locale=ko&card_width=200&hide_current_streak=true&hide_longest_streak=true)](https://git.io/streak-stats)
 
-<br/>
-<br/>
-
-[![Solved.ac
-프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=kjh71047)](https://solved.ac/{handle})
-
-
-
+</div>
 </div>
