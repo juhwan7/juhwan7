@@ -1,11 +1,14 @@
-
 <div align="center">
 
+## 🎮 JUHWAN ARCADE
 
+별똥별을 피하며 최고점수에 도전하는 작은 개인 놀이터입니다.
 
+[![PLAY 별똥별 피하기](https://img.shields.io/badge/PLAY-별똥별%20피하기-f7ca45?style=for-the-badge&logo=rocket&logoColor=211900)](https://juhwan7.github.io/readme-mini-game/)
 
+<br/>
 
-  ## ✅ Back-end Stack
+## ✅ Back-end Stack
   
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
@@ -17,7 +20,6 @@
 ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
 ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
 ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
-
 
 <br/>
 <div>
@@ -35,10 +37,7 @@
 
 </div>
 
-
-
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fjuhwan7%2Fhit-counter&count_bg=%23469060&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 <br/>
 
 </div>
-
