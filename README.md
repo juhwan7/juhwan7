@@ -10,17 +10,17 @@
 
 ### [시장 메모](https://github.com/juhwan7/market-memo)
 시장 이슈·기업·테마·정책을 최신 상태로 축적하는 개인 리서치 노트
-`최근 7일 46개 주요 커밋` · 최근 작업: [트럼프 대미투자 전략 지도 추가](https://github.com/juhwan7/market-memo/commit/80146e4deb005e7ac6e1d3688ea470feb9465c81)
+`최근 7일 40개 주요 커밋` · 최근 작업: [트럼프 대미투자 전략 지도 추가](https://github.com/juhwan7/market-memo/commit/80146e4deb005e7ac6e1d3688ea470feb9465c81)
 
 ## 🛠 최근 GitHub 작업
 
 | 시각 | 저장소 | 작업 |
 |---|---|---|
 | 오늘 11:23 | [market-memo](https://github.com/juhwan7/market-memo) | [트럼프 대미투자 전략 지도 추가](https://github.com/juhwan7/market-memo/commit/80146e4deb005e7ac6e1d3688ea470feb9465c81) |
-| 오늘 10:52 | [market-memo](https://github.com/juhwan7/market-memo) | [최근 업데이트: 소프트뱅크 기업 분석 기록](https://github.com/juhwan7/market-memo/commit/98e5807732ae3e80fc54c7f898e3d1f00bd35e65) |
 | 오늘 10:51 | [market-memo](https://github.com/juhwan7/market-memo) | [종목분석: 소프트뱅크 그룹 기업 분석 추가](https://github.com/juhwan7/market-memo/commit/acc57c3c2fa1e912e20b1b16a4736c2fbb8130be) |
-| 오늘 10:49 | [market-memo](https://github.com/juhwan7/market-memo) | [종목분석: 해외기업 분류 추가](https://github.com/juhwan7/market-memo/commit/0b4e65e227b5aea6bea0ffd22c7b76722e33ec1c) |
-| 오늘 10:16 | [market-memo](https://github.com/juhwan7/market-memo) | [자동 PR 권한 설정 안내 추가](https://github.com/juhwan7/market-memo/commit/34767fb7ecc0383751634d8bc0f3a25d24394163) |
+| 오늘 10:15 | [market-memo](https://github.com/juhwan7/market-memo) | [자동 감시 전용 AI 작업 규칙 추가](https://github.com/juhwan7/market-memo/commit/81e09dc402ebda0835ec8d04a9a03e7eb122f937) |
+| 오늘 10:13 | [market-memo](https://github.com/juhwan7/market-memo) | [IPO 자동 감시 GitHub Actions 추가](https://github.com/juhwan7/market-memo/commit/63c57b94ec76d021a7d004350f099f76f28f511d) |
+| 오늘 10:13 | [market-memo](https://github.com/juhwan7/market-memo) | [무신사 IPO 자동 감시 스크립트 추가](https://github.com/juhwan7/market-memo/commit/b9f1333e264b2e66c876113607299a1497a18482) |
 
 ## 👀 최근 관심 주제
 
