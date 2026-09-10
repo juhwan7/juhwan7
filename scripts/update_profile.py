@@ -108,6 +108,16 @@ def fetch_repo_activities(
     return activities
 
 
+def dedupe_activities(activities: list[Activity]) -> list[Activity]:
+    latest_by_key: dict[tuple[str, str], Activity] = {}
+    for activity in activities:
+        key = (activity.repo, activity.message)
+        current = latest_by_key.get(key)
+        if current is None or activity.happened_at > current.happened_at:
+            latest_by_key[key] = activity
+    return list(latest_by_key.values())
+
+
 def relative_time(value: datetime, tz: ZoneInfo) -> str:
     local = value.astimezone(tz)
     now = datetime.now(tz)
@@ -290,6 +300,7 @@ def main() -> None:
             )
         )
 
+    activities = dedupe_activities(activities)
     interests = fetch_interests(config)
     content = render(config, activities, interests)
     README_PATH.write_text(content, encoding="utf-8")
