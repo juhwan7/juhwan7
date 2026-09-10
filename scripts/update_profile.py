@@ -5,6 +5,7 @@ import os
 import re
 import urllib.parse
 import urllib.request
+from collections import defaultdict
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -58,7 +59,7 @@ def clean_message(message: str) -> str:
 
 def should_ignore(message: str, patterns: list[str]) -> bool:
     lowered = message.lower()
-    return any(pattern.lower() in lowered for pattern in patterns)
+    return any(str(pattern).lower() in lowered for pattern in patterns)
 
 
 def parse_datetime(value: str) -> datetime:
@@ -122,14 +123,23 @@ def github_blob_url(owner: str, repo: str, path: str) -> str:
     return f"https://github.com/{owner}/{repo}/blob/main/{encoded}"
 
 
-def fetch_interests(config: dict, token: str | None) -> list[tuple[str, str]]:
+def interest_title(title: str, path: str) -> str:
+    raw = title.strip().strip("`")
+    if "/" in raw or raw.endswith(".md"):
+        raw = Path(path).stem
+    raw = raw.replace("-", " ")
+    raw = re.sub(r"\s+", " ", raw).strip()
+    return raw
+
+
+def fetch_interests(config: dict) -> list[tuple[str, str]]:
     owner = config["owner"]
     interest_cfg = config["interests"]
     repo = interest_cfg["source_repo"]
     source_file = interest_cfg["source_file"]
     encoded = urllib.parse.quote(source_file, safe="/")
     raw_url = f"https://raw.githubusercontent.com/{owner}/{repo}/main/{encoded}"
-    text = request(raw_url, token=None).decode("utf-8")
+    text = request(raw_url).decode("utf-8")
 
     include_paths = interest_cfg.get("include_paths", [])
     exclude_paths = interest_cfg.get("exclude_paths", [])
@@ -145,15 +155,29 @@ def fetch_interests(config: dict, token: str | None) -> list[tuple[str, str]]:
             continue
         if normalized.endswith("README.md"):
             continue
-        key = title.strip()
-        if not key or key in seen:
+
+        display = interest_title(title, normalized)
+        if not display or display in seen:
             continue
-        seen.add(key)
-        results.append((key, github_blob_url(owner, repo, normalized)))
+        seen.add(display)
+        results.append((display, github_blob_url(owner, repo, normalized)))
         if len(results) >= limit:
             break
 
     return results
+
+
+def select_recent_activities(activities: list[Activity], limit: int, max_per_repo: int) -> list[Activity]:
+    selected: list[Activity] = []
+    repo_counts: defaultdict[str, int] = defaultdict(int)
+    for activity in sorted(activities, key=lambda a: a.happened_at, reverse=True):
+        if repo_counts[activity.repo] >= max_per_repo:
+            continue
+        selected.append(activity)
+        repo_counts[activity.repo] += 1
+        if len(selected) >= limit:
+            break
+    return selected
 
 
 def render(config: dict, activities: list[Activity], interests: list[tuple[str, str]]) -> str:
@@ -181,8 +205,10 @@ def render(config: dict, activities: list[Activity], interests: list[tuple[str, 
     max_projects = int(now_cfg.get("max_projects", 2))
     project_rows = project_rows[:max_projects]
 
-    activity_limit = int(config.get("recent_activity", {}).get("limit", 5))
-    latest_activities = sorted(activities, key=lambda a: a.happened_at, reverse=True)[:activity_limit]
+    recent_cfg = config.get("recent_activity", {})
+    activity_limit = int(recent_cfg.get("limit", 5))
+    max_per_repo = int(recent_cfg.get("max_per_repo", activity_limit))
+    latest_activities = select_recent_activities(activities, activity_limit, max_per_repo)
 
     lines: list[str] = []
     lines.append("# Juhwan")
@@ -197,11 +223,11 @@ def render(config: dict, activities: list[Activity], interests: list[tuple[str, 
         lines.append(meta["description"])
         if latest:
             lines.append(
-                f"`최근 {now_days}일 {count}개 주요 커밋` · 최근 작업: "
+                f"`최근 {now_days}일 주요 작업 {count}개` · 최근 작업: "
                 f"[{latest.message}]({latest.url})"
             )
         else:
-            lines.append(f"`최근 {now_days}일 주요 커밋 없음`")
+            lines.append(f"`최근 {now_days}일 주요 작업 없음`")
         lines.append("")
 
     lines.append("## 🛠 최근 GitHub 작업")
@@ -264,7 +290,7 @@ def main() -> None:
             )
         )
 
-    interests = fetch_interests(config, token)
+    interests = fetch_interests(config)
     content = render(config, activities, interests)
     README_PATH.write_text(content, encoding="utf-8")
 
