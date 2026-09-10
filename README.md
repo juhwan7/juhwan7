@@ -22,6 +22,15 @@
 | 어제 22:01 | [vibe-coding-playground](https://github.com/juhwan7/vibe-coding-playground) | [금일 이슈 일봉을 60일 표준 캔들로 개선](https://github.com/juhwan7/vibe-coding-playground/commit/7bc0fdf8c98aa12787f9fb1686b807eb444a6df2) |
 | 어제 21:55 | [vibe-coding-playground](https://github.com/juhwan7/vibe-coding-playground) | [모바일 반응형 개선 기록](https://github.com/juhwan7/vibe-coding-playground/commit/3de3895493b0b3131a3696132c3a923954a018a4) |
 
+## 📝 최근 업데이트된 자료
+
+| 시각 | 자료 |
+|---|---|
+| 오늘 11:23 | [트럼프 대미투자 전략 지도](https://github.com/juhwan7/market-memo/blob/main/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%EB%8C%80%EB%AF%B8%ED%88%AC%EC%9E%90/%ED%8A%B8%EB%9F%BC%ED%94%84-%EB%8C%80%EB%AF%B8%ED%88%AC%EC%9E%90-%EC%A0%84%EB%9E%B5-%EC%A7%80%EB%8F%84.md) |
+| 오늘 10:51 | [소프트뱅크](https://github.com/juhwan7/market-memo/blob/main/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%ED%95%B4%EC%99%B8%EA%B8%B0%EC%97%85/%EC%86%8C%ED%94%84%ED%8A%B8%EB%B1%85%ED%81%AC.md) |
+| 오늘 10:00 | [무신사 IPO](https://github.com/juhwan7/market-memo/blob/main/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/%EB%AC%B4%EC%8B%A0%EC%82%AC-IPO.md) |
+| 오늘 09:30 | [한국 대기업 로봇 사업 지도](https://github.com/juhwan7/market-memo/blob/main/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%EB%A1%9C%EB%B4%87/%ED%95%9C%EA%B5%AD-%EB%8C%80%EA%B8%B0%EC%97%85-%EB%A1%9C%EB%B4%87-%EC%82%AC%EC%97%85-%EC%A7%80%EB%8F%84.md) |
+
 ## 👀 최근 관심 주제
 
 - [소프트뱅크](https://github.com/juhwan7/market-memo/blob/main/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%ED%95%B4%EC%99%B8%EA%B8%B0%EC%97%85/%EC%86%8C%ED%94%84%ED%8A%B8%EB%B1%85%ED%81%AC.md)
