@@ -10,7 +10,7 @@
 
 ### [시장 메모](https://github.com/juhwan7/market-memo)
 시장 이슈·기업·테마·정책을 최신 상태로 축적하는 개인 리서치 노트
-`최근 7일 주요 작업 40개` · 최근 작업: [트럼프 대미투자 전략 지도 추가](https://github.com/juhwan7/market-memo/commit/80146e4deb005e7ac6e1d3688ea470feb9465c81)
+`최근 7일 주요 작업 35개` · 최근 작업: [트럼프 대미투자 전략 지도 추가](https://github.com/juhwan7/market-memo/commit/80146e4deb005e7ac6e1d3688ea470feb9465c81)
 
 ## 🛠 최근 GitHub 작업
 
@@ -18,7 +18,7 @@
 |---|---|---|
 | 오늘 11:23 | [market-memo](https://github.com/juhwan7/market-memo) | [트럼프 대미투자 전략 지도 추가](https://github.com/juhwan7/market-memo/commit/80146e4deb005e7ac6e1d3688ea470feb9465c81) |
 | 오늘 10:51 | [market-memo](https://github.com/juhwan7/market-memo) | [종목분석: 소프트뱅크 그룹 기업 분석 추가](https://github.com/juhwan7/market-memo/commit/acc57c3c2fa1e912e20b1b16a4736c2fbb8130be) |
-| 오늘 10:15 | [market-memo](https://github.com/juhwan7/market-memo) | [자동 감시 전용 AI 작업 규칙 추가](https://github.com/juhwan7/market-memo/commit/81e09dc402ebda0835ec8d04a9a03e7eb122f937) |
+| 오늘 10:12 | [market-memo](https://github.com/juhwan7/market-memo) | [무신사 IPO 감시 초기 상태 추가](https://github.com/juhwan7/market-memo/commit/b7f21a810575cc9002d474917350ac3b7d62bb51) |
 | 어제 22:01 | [vibe-coding-playground](https://github.com/juhwan7/vibe-coding-playground) | [금일 이슈 일봉을 60일 표준 캔들로 개선](https://github.com/juhwan7/vibe-coding-playground/commit/7bc0fdf8c98aa12787f9fb1686b807eb444a6df2) |
 | 어제 22:00 | [vibe-coding-playground](https://github.com/juhwan7/vibe-coding-playground) | [금일 이슈 일봉을 60일 표준 캔들로 개선](https://github.com/juhwan7/vibe-coding-playground/commit/00988ce98999cbea38b4345827985cc358757636) |
 
