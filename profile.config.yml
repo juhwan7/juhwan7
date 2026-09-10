@@ -13,15 +13,20 @@ tracked_repositories:
 
 recent_activity:
   limit: 5
+  max_per_repo: 3
   lookback_days: 14
   ignore_messages:
     - "README"
     - "readme"
     - "Merge"
     - "merge"
+    - "최근 업데이트"
     - "업데이트 기록"
     - "인덱스"
-    - "자동감시:"
+    - "분류 추가"
+    - "자동감시"
+    - "자동 PR"
+    - "권한 설정 안내"
     - "프로필 자동 업데이트"
 
 interests:
