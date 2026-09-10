@@ -26,6 +26,14 @@ class Activity:
     happened_at: datetime
 
 
+@dataclass
+class DocumentUpdate:
+    title: str
+    path: str
+    url: str
+    happened_at: datetime
+
+
 def load_config() -> dict:
     return yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8"))
 
@@ -142,7 +150,7 @@ def interest_title(title: str, path: str) -> str:
     return raw
 
 
-def fetch_interests(config: dict) -> list[tuple[str, str]]:
+def fetch_source_links(config: dict) -> list[tuple[str, str]]:
     owner = config["owner"]
     interest_cfg = config["interests"]
     repo = interest_cfg["source_repo"]
@@ -153,10 +161,9 @@ def fetch_interests(config: dict) -> list[tuple[str, str]]:
 
     include_paths = interest_cfg.get("include_paths", [])
     exclude_paths = interest_cfg.get("exclude_paths", [])
-    limit = int(interest_cfg.get("limit", 5))
 
     results: list[tuple[str, str]] = []
-    seen: set[str] = set()
+    seen_paths: set[str] = set()
     for title, path in re.findall(r"\[([^\]]+)\]\(([^)]+)\)", text):
         normalized = path.lstrip("./")
         if not any(normalized.startswith(prefix) for prefix in include_paths):
@@ -165,16 +172,61 @@ def fetch_interests(config: dict) -> list[tuple[str, str]]:
             continue
         if normalized.endswith("README.md"):
             continue
-
-        display = interest_title(title, normalized)
-        if not display or display in seen:
+        if normalized in seen_paths:
             continue
-        seen.add(display)
+        seen_paths.add(normalized)
+        results.append((interest_title(title, normalized), normalized))
+
+    return results
+
+
+def fetch_interests(config: dict) -> list[tuple[str, str]]:
+    owner = config["owner"]
+    interest_cfg = config["interests"]
+    repo = interest_cfg["source_repo"]
+    limit = int(interest_cfg.get("limit", 5))
+
+    results: list[tuple[str, str]] = []
+    seen_titles: set[str] = set()
+    for display, normalized in fetch_source_links(config):
+        if not display or display in seen_titles:
+            continue
+        seen_titles.add(display)
         results.append((display, github_blob_url(owner, repo, normalized)))
         if len(results) >= limit:
             break
-
     return results
+
+
+def fetch_recent_documents(config: dict, token: str | None) -> list[DocumentUpdate]:
+    owner = config["owner"]
+    cfg = config["interests"]
+    repo = cfg["source_repo"]
+    limit = int(cfg.get("recent_documents_limit", cfg.get("limit", 5)))
+    updates: list[DocumentUpdate] = []
+
+    for title, path in fetch_source_links(config):
+        encoded_path = urllib.parse.quote(path, safe="")
+        api_url = f"https://api.github.com/repos/{owner}/{repo}/commits?path={encoded_path}&per_page=1"
+        commits = api_json(api_url, token)
+        if not commits:
+            continue
+        commit = commits[0]
+        commit_data = commit.get("commit") or {}
+        date_value = ((commit_data.get("committer") or {}).get("date") or (commit_data.get("author") or {}).get("date"))
+        if not date_value:
+            continue
+        updates.append(
+            DocumentUpdate(
+                title=title,
+                path=path,
+                url=github_blob_url(owner, repo, path),
+                happened_at=parse_datetime(date_value),
+            )
+        )
+
+    updates.sort(key=lambda item: item.happened_at, reverse=True)
+    return updates[:limit]
 
 
 def select_recent_activities(activities: list[Activity], limit: int, max_per_repo: int) -> list[Activity]:
@@ -190,7 +242,12 @@ def select_recent_activities(activities: list[Activity], limit: int, max_per_rep
     return selected
 
 
-def render(config: dict, activities: list[Activity], interests: list[tuple[str, str]]) -> str:
+def render(
+    config: dict,
+    activities: list[Activity],
+    interests: list[tuple[str, str]],
+    recent_documents: list[DocumentUpdate],
+) -> str:
     owner = config["owner"]
     tz = ZoneInfo(config.get("timezone", "Asia/Seoul"))
     now_cfg = config.get("now", {})
@@ -255,6 +312,20 @@ def render(config: dict, activities: list[Activity], interests: list[tuple[str, 
         lines.append("최근 표시할 주요 작업이 없습니다.")
     lines.append("")
 
+    lines.append("## 📝 최근 업데이트된 자료")
+    lines.append("")
+    if recent_documents:
+        lines.append("| 시각 | 자료 |")
+        lines.append("|---|---|")
+        for document in recent_documents:
+            lines.append(
+                f"| {relative_time(document.happened_at, tz)} | "
+                f"[{document.title}]({document.url}) |"
+            )
+    else:
+        lines.append("최근 업데이트된 자료가 없습니다.")
+    lines.append("")
+
     lines.append("## 👀 최근 관심 주제")
     lines.append("")
     if interests:
@@ -302,7 +373,8 @@ def main() -> None:
 
     activities = dedupe_activities(activities)
     interests = fetch_interests(config)
-    content = render(config, activities, interests)
+    recent_documents = fetch_recent_documents(config, token)
+    content = render(config, activities, interests, recent_documents)
     README_PATH.write_text(content, encoding="utf-8")
 
 
