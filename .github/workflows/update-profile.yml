@@ -1,0 +1,58 @@
+name: 프로필 자동 업데이트
+
+on:
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - profile.config.yml
+      - scripts/update_profile.py
+      - .github/workflows/update-profile.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-readme-update
+  cancel-in-progress: true
+
+jobs:
+  update-profile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+
+      - name: Python 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 의존성 설치
+        run: python -m pip install --disable-pip-version-check pyyaml
+
+      - name: 프로필 README 생성
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/update_profile.py
+
+      - name: 변경된 경우에만 커밋
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- README.md; then
+            echo "프로필에 반영할 새 데이터가 없습니다."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: 프로필 자동 업데이트"
+          git push
