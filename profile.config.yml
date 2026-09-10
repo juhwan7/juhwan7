@@ -1,0 +1,40 @@
+owner: juhwan7
+timezone: Asia/Seoul
+
+tracked_repositories:
+  - repo: vibe-coding-playground
+    title: 시장 대시보드
+    description: 한국 증시의 테마·거래대금·수급·시장 흐름을 한 화면에서 보기 위한 프로젝트
+    url: https://github.com/juhwan7/vibe-coding-playground
+  - repo: market-memo
+    title: 시장 메모
+    description: 시장 이슈·기업·테마·정책을 최신 상태로 축적하는 개인 리서치 노트
+    url: https://github.com/juhwan7/market-memo
+
+recent_activity:
+  limit: 5
+  lookback_days: 14
+  ignore_messages:
+    - README
+    - readme
+    - Merge
+    - merge
+    - 업데이트 기록
+    - 인덱스
+    - 자동감시:
+    - 프로필 자동 업데이트
+
+interests:
+  source_repo: market-memo
+  source_file: 최근-업데이트.md
+  limit: 5
+  include_paths:
+    - 산업-테마/
+    - 종목분석/
+    - 시황/
+  exclude_paths:
+    - 자동감시/
+
+now:
+  lookback_days: 7
+  max_projects: 2
