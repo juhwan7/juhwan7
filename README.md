@@ -21,7 +21,7 @@
 <h3>Market Memo</h3>
 <p>시장 이슈·기업·테마·정책을 구조화하고 최신 상태로 축적하는 개인 시장 지식베이스</p>
 <p><a href="https://juhwan7.github.io/market-memo/"><b>웹사이트 ↗</b></a> · <a href="https://github.com/juhwan7/market-memo">GitHub</a></p>
-<sub>최근 7일 주요 작업 48개 · 최근: <a href="https://github.com/juhwan7/market-memo/commit/2126c6fbcdd392d2baca4d07d5554d115de16974">종목분석: OpenAI Astra 수요 폭증과 컴퓨트 병목 정리</a></sub>
+<sub>최근 7일 주요 작업 52개 · 최근: <a href="https://github.com/juhwan7/market-memo/commit/18a8cbbd736e565981cf79a992a1e8c9c4fb990b">문서: 핵심 이해 중심 압축형 작성 체계로 전환</a></sub>
 </td>
 <td width="50%" valign="top">
 <h3>시장 대시보드</h3>
@@ -36,9 +36,9 @@
 
 | 시각 | 프로젝트 | 작업 |
 |---|---|---|
-| 오늘 13:14 | [Market Memo](https://github.com/juhwan7/market-memo) | [종목분석: OpenAI Astra 수요 폭증과 컴퓨트 병목 정리](https://github.com/juhwan7/market-memo/commit/2126c6fbcdd392d2baca4d07d5554d115de16974) |
-| 오늘 13:06 | [Market Memo](https://github.com/juhwan7/market-memo) | [프로젝트 상태: AI 상태감시 구조 반영](https://github.com/juhwan7/market-memo/commit/a4636fafb5479605ad5899a9987c76a330b58351) |
-| 오늘 13:01 | [Market Memo](https://github.com/juhwan7/market-memo) | [글로벌: 중국의 북미정상 중재 가능성 기준 문서 연결](https://github.com/juhwan7/market-memo/commit/9dbde278225d737a06e02eb74371c25a94d97ddd) |
+| 오늘 16:07 | [Market Memo](https://github.com/juhwan7/market-memo) | [문서: 핵심 이해 중심 압축형 작성 체계로 전환](https://github.com/juhwan7/market-memo/commit/18a8cbbd736e565981cf79a992a1e8c9c4fb990b) |
+| 오늘 15:56 | [Market Memo](https://github.com/juhwan7/market-memo) | [9월 14일 시간외단일가 폐지와 KRX 애프터마켓 정리](https://github.com/juhwan7/market-memo/commit/802dd43bb0098687b048f9b7cf6ad42194f471c7) |
+| 오늘 15:43 | [Market Memo](https://github.com/juhwan7/market-memo) | [웹: 브라우저 전용 읽기 상태 관리 추가](https://github.com/juhwan7/market-memo/commit/ce183285bc2cb6927df14ab533c0d2ae5e4aea7a) |
 | 어제 22:01 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [금일 이슈 일봉을 60일 표준 캔들로 개선](https://github.com/juhwan7/vibe-coding-playground/commit/7bc0fdf8c98aa12787f9fb1686b807eb444a6df2) |
 | 어제 21:55 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [모바일 반응형 개선 기록](https://github.com/juhwan7/vibe-coding-playground/commit/3de3895493b0b3131a3696132c3a923954a018a4) |
 | 어제 21:52 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [현재 종목 퀴즈 모바일 셸 기준으로 검증](https://github.com/juhwan7/vibe-coding-playground/commit/05e0575238ed3d2fa9af817d5d026519e21b46a8) |
@@ -49,16 +49,16 @@
 
 | 업데이트 | 자료 |
 |---|---|
+| 오늘 15:56 | [2026 09 14 시간외단일가 폐지 애프터마켓](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%ED%95%9C%EA%B5%AD%EC%A6%9D%EC%8B%9C/2026-09-14-%EC%8B%9C%EA%B0%84%EC%99%B8%EB%8B%A8%EC%9D%BC%EA%B0%80-%ED%8F%90%EC%A7%80-%EC%95%A0%ED%94%84%ED%84%B0%EB%A7%88%EC%BC%93/) |
+| 오늘 15:29 | [TSMC](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%ED%95%B4%EC%99%B8%EA%B8%B0%EC%97%85/TSMC/) |
+| 오늘 14:34 | [현대차 핵융합 투자 전략](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%ED%95%B5%EC%9C%B5%ED%95%A9/%ED%98%84%EB%8C%80%EC%B0%A8-%ED%95%B5%EC%9C%B5%ED%95%A9-%ED%88%AC%EC%9E%90-%EC%A0%84%EB%9E%B5/) |
 | 오늘 13:14 | [OpenAI](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/) |
 | 오늘 13:00 | [2026 09 중국 트럼프 김정은 중재 가능성](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-%EC%A4%91%EA%B5%AD-%ED%8A%B8%EB%9F%BC%ED%94%84-%EA%B9%80%EC%A0%95%EC%9D%80-%EC%A4%91%EC%9E%AC-%EA%B0%80%EB%8A%A5%EC%84%B1/) |
 | 오늘 12:59 | [TSLA 테슬라](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%AF%B8%EA%B5%AD%EC%A3%BC%EC%8B%9D/TSLA-%ED%85%8C%EC%8A%AC%EB%9D%BC/) |
-| 오늘 12:45 | [트럼프 5000달러 배당 공약](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%EB%AF%B8%EA%B5%AD%EC%A0%95%EC%B1%85/%ED%8A%B8%EB%9F%BC%ED%94%84-5000%EB%8B%AC%EB%9F%AC-%EB%B0%B0%EB%8B%B9-%EA%B3%B5%EC%95%BD/) |
-| 오늘 12:24 | [2026 09 FOMC 해석 가이드](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EC%A3%BC%EC%9A%94%EC%9D%BC%EC%A0%95/2026-09-FOMC-%ED%95%B4%EC%84%9D-%EA%B0%80%EC%9D%B4%EB%93%9C/) |
-| 오늘 12:22 | [유가 이해 가이드](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/%EC%9C%A0%EA%B0%80-%EC%9D%B4%ED%95%B4-%EA%B0%80%EC%9D%B4%EB%93%9C/) |
 
 ## 요즘 보는 것
 
-[OpenAI](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/) · [TSLA 테슬라](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%AF%B8%EA%B5%AD%EC%A3%BC%EC%8B%9D/TSLA-%ED%85%8C%EC%8A%AC%EB%9D%BC/) · [2026 09 중국 트럼프 김정은 중재 가능성](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-%EC%A4%91%EA%B5%AD-%ED%8A%B8%EB%9F%BC%ED%94%84-%EA%B9%80%EC%A0%95%EC%9D%80-%EC%A4%91%EC%9E%AC-%EA%B0%80%EB%8A%A5%EC%84%B1/) · [트럼프 5000달러 배당 공약](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%EB%AF%B8%EA%B5%AD%EC%A0%95%EC%B1%85/%ED%8A%B8%EB%9F%BC%ED%94%84-5000%EB%8B%AC%EB%9F%AC-%EB%B0%B0%EB%8B%B9-%EA%B3%B5%EC%95%BD/) · [2026 09 FOMC 해석 가이드](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EC%A3%BC%EC%9A%94%EC%9D%BC%EC%A0%95/2026-09-FOMC-%ED%95%B4%EC%84%9D-%EA%B0%80%EC%9D%B4%EB%93%9C/) · [애플 아이폰 듀오 출시 의미](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%ED%8F%B4%EB%8D%94%EB%B8%94/%EC%95%A0%ED%94%8C-%EC%95%84%EC%9D%B4%ED%8F%B0-%EB%93%80%EC%98%A4-%EC%B6%9C%EC%8B%9C-%EC%9D%98%EB%AF%B8/)
+[2026 09 14 시간외단일가 폐지 애프터마켓](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%ED%95%9C%EA%B5%AD%EC%A6%9D%EC%8B%9C/2026-09-14-%EC%8B%9C%EA%B0%84%EC%99%B8%EB%8B%A8%EC%9D%BC%EA%B0%80-%ED%8F%90%EC%A7%80-%EC%95%A0%ED%94%84%ED%84%B0%EB%A7%88%EC%BC%93/) · [TSMC](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%ED%95%B4%EC%99%B8%EA%B8%B0%EC%97%85/TSMC/) · [현대차 핵융합 투자 전략](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%ED%95%B5%EC%9C%B5%ED%95%A9/%ED%98%84%EB%8C%80%EC%B0%A8-%ED%95%B5%EC%9C%B5%ED%95%A9-%ED%88%AC%EC%9E%90-%EC%A0%84%EB%9E%B5/) · [OpenAI](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/) · [TSLA 테슬라](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%AF%B8%EA%B5%AD%EC%A3%BC%EC%8B%9D/TSLA-%ED%85%8C%EC%8A%AC%EB%9D%BC/) · [2026 09 중국 트럼프 김정은 중재 가능성](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-%EC%A4%91%EA%B5%AD-%ED%8A%B8%EB%9F%BC%ED%94%84-%EA%B9%80%EC%A0%95%EC%9D%80-%EC%A4%91%EC%9E%AC-%EA%B0%80%EB%8A%A5%EC%84%B1/)
 
 ## 사용하는 도구
 
@@ -80,6 +80,6 @@
 
 ---
 
-<sub>최근 활동 데이터 기준: 2026-09-10 13:14 KST · GitHub Actions가 주기적으로 자동 갱신합니다.</sub>
+<sub>최근 활동 데이터 기준: 2026-09-10 16:07 KST · GitHub Actions가 주기적으로 자동 갱신합니다.</sub>
 
 <!-- 이 README는 GitHub Actions가 실제 데이터가 바뀔 때만 자동 갱신합니다. -->
