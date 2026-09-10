@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import html
 import json
 import os
 import re
@@ -141,6 +142,16 @@ def github_blob_url(owner: str, repo: str, path: str) -> str:
     return f"https://github.com/{owner}/{repo}/blob/main/{encoded}"
 
 
+def site_document_url(base_url: str, path: str) -> str:
+    normalized = path.lstrip("./")
+    if normalized.endswith("README.md"):
+        normalized = normalized[: -len("README.md")]
+    elif normalized.endswith(".md"):
+        normalized = normalized[:-3] + "/"
+    encoded = urllib.parse.quote(normalized, safe="/")
+    return base_url.rstrip("/") + "/" + encoded.lstrip("/")
+
+
 def interest_title(title: str, path: str) -> str:
     raw = title.strip().strip("`")
     if "/" in raw or raw.endswith(".md"):
@@ -180,19 +191,26 @@ def fetch_source_links(config: dict) -> list[tuple[str, str]]:
     return results
 
 
-def fetch_interests(config: dict) -> list[tuple[str, str]]:
+def source_document_url(config: dict, path: str) -> str:
     owner = config["owner"]
-    interest_cfg = config["interests"]
-    repo = interest_cfg["source_repo"]
-    limit = int(interest_cfg.get("limit", 5))
+    cfg = config["interests"]
+    repo = cfg["source_repo"]
+    site_url = cfg.get("site_url")
+    if site_url:
+        return site_document_url(site_url, path)
+    return github_blob_url(owner, repo, path)
 
+
+def fetch_interests(config: dict) -> list[tuple[str, str]]:
+    limit = int(config["interests"].get("limit", 5))
     results: list[tuple[str, str]] = []
     seen_titles: set[str] = set()
+
     for display, normalized in fetch_source_links(config):
         if not display or display in seen_titles:
             continue
         seen_titles.add(display)
-        results.append((display, github_blob_url(owner, repo, normalized)))
+        results.append((display, source_document_url(config, normalized)))
         if len(results) >= limit:
             break
     return results
@@ -213,14 +231,17 @@ def fetch_recent_documents(config: dict, token: str | None) -> list[DocumentUpda
             continue
         commit = commits[0]
         commit_data = commit.get("commit") or {}
-        date_value = ((commit_data.get("committer") or {}).get("date") or (commit_data.get("author") or {}).get("date"))
+        date_value = (
+            (commit_data.get("committer") or {}).get("date")
+            or (commit_data.get("author") or {}).get("date")
+        )
         if not date_value:
             continue
         updates.append(
             DocumentUpdate(
                 title=title,
                 path=path,
-                url=github_blob_url(owner, repo, path),
+                url=source_document_url(config, path),
                 happened_at=parse_datetime(date_value),
             )
         )
@@ -229,7 +250,9 @@ def fetch_recent_documents(config: dict, token: str | None) -> list[DocumentUpda
     return updates[:limit]
 
 
-def select_recent_activities(activities: list[Activity], limit: int, max_per_repo: int) -> list[Activity]:
+def select_recent_activities(
+    activities: list[Activity], limit: int, max_per_repo: int
+) -> list[Activity]:
     selected: list[Activity] = []
     repo_counts: defaultdict[str, int] = defaultdict(int)
     for activity in sorted(activities, key=lambda a: a.happened_at, reverse=True):
@@ -242,6 +265,59 @@ def select_recent_activities(activities: list[Activity], limit: int, max_per_rep
     return selected
 
 
+def markdown_cell(value: str) -> str:
+    return value.replace("|", "\\|").replace("\n", " ").strip()
+
+
+def project_cards(
+    config: dict, activities: list[Activity], now_days: int
+) -> list[str]:
+    owner = config["owner"]
+    rows: list[str] = ["<table>", "<tr>"]
+
+    for item in config["tracked_repositories"][:2]:
+        repo = item["repo"]
+        repo_activities = [a for a in activities if a.repo == repo]
+        cutoff = datetime.now(timezone.utc) - timedelta(days=now_days)
+        recent = [a for a in repo_activities if a.happened_at >= cutoff]
+        latest = max(repo_activities, key=lambda a: a.happened_at, default=None)
+
+        title = html.escape(str(item["title"]))
+        description = html.escape(str(item["description"]))
+        repo_url = html.escape(str(item.get("url", f"https://github.com/{owner}/{repo}")), quote=True)
+        live_url = item.get("live_url")
+        live_label = html.escape(str(item.get("live_label", "Live")))
+
+        links = []
+        if live_url:
+            links.append(
+                f'<a href="{html.escape(str(live_url), quote=True)}"><b>{live_label} ↗</b></a>'
+            )
+        links.append(f'<a href="{repo_url}">GitHub</a>')
+
+        latest_line = f"최근 {now_days}일 주요 작업 {len(recent)}개"
+        if latest:
+            latest_line += (
+                " · 최근: "
+                f'<a href="{html.escape(latest.url, quote=True)}">'
+                f"{html.escape(latest.message)}</a>"
+            )
+
+        rows.extend(
+            [
+                '<td width="50%" valign="top">',
+                f"<h3>{title}</h3>",
+                f"<p>{description}</p>",
+                f"<p>{' · '.join(links)}</p>",
+                f"<sub>{latest_line}</sub>",
+                "</td>",
+            ]
+        )
+
+    rows.extend(["</tr>", "</table>"])
+    return rows
+
+
 def render(
     config: dict,
     activities: list[Activity],
@@ -250,103 +326,131 @@ def render(
 ) -> str:
     owner = config["owner"]
     tz = ZoneInfo(config.get("timezone", "Asia/Seoul"))
+    profile_cfg = config.get("profile", {})
+    tagline = profile_cfg.get(
+        "tagline", "시장을 읽고, 기록하고, 필요한 도구를 직접 만듭니다."
+    )
+    subtitle = profile_cfg.get(
+        "subtitle", "주식시장 리서치 · 데이터 대시보드 · 자동화 · 바이브코딩"
+    )
+
     now_cfg = config.get("now", {})
     now_days = int(now_cfg.get("lookback_days", 7))
-    now_cutoff = datetime.now(timezone.utc) - timedelta(days=now_days)
-
-    repo_cfg = {item["repo"]: item for item in config["tracked_repositories"]}
-    project_rows = []
-    for repo, meta in repo_cfg.items():
-        repo_activities = [a for a in activities if a.repo == repo]
-        recent = [a for a in repo_activities if a.happened_at >= now_cutoff]
-        latest = max(repo_activities, key=lambda a: a.happened_at, default=None)
-        project_rows.append((repo, meta, len(recent), latest))
-
-    project_rows.sort(
-        key=lambda row: (
-            row[2],
-            row[3].happened_at.timestamp() if row[3] else 0,
-        ),
-        reverse=True,
-    )
-    max_projects = int(now_cfg.get("max_projects", 2))
-    project_rows = project_rows[:max_projects]
 
     recent_cfg = config.get("recent_activity", {})
-    activity_limit = int(recent_cfg.get("limit", 5))
+    activity_limit = int(recent_cfg.get("limit", 6))
     max_per_repo = int(recent_cfg.get("max_per_repo", activity_limit))
     latest_activities = select_recent_activities(activities, activity_limit, max_per_repo)
 
+    market_memo = next(
+        (item for item in config["tracked_repositories"] if item["repo"] == "market-memo"),
+        {},
+    )
+    market_memo_live = market_memo.get(
+        "live_url", "https://juhwan7.github.io/market-memo/"
+    )
+
     lines: list[str] = []
-    lines.append("# Juhwan")
-    lines.append("")
-    lines.append("> 요즘 만들고 있는 것과 최근 관심사를 자동으로 정리하는 GitHub 프로필입니다.")
-    lines.append("")
-    lines.append("## 🔥 지금 하고 있는 것")
-    lines.append("")
+    lines.extend(
+        [
+            '<div align="center">',
+            "",
+            "# Juhwan",
+            "",
+            f"### {tagline}",
+            "",
+            f"{subtitle}",
+            "",
+            f'<a href="{market_memo_live}"><img src="https://img.shields.io/badge/Market%20Memo-LIVE-111827?style=for-the-badge&logo=githubpages&logoColor=white" alt="Market Memo"></a>',
+            f'<a href="https://github.com/{owner}/vibe-coding-playground"><img src="https://img.shields.io/badge/Market%20Dashboard-GitHub-24292F?style=for-the-badge&logo=github&logoColor=white" alt="Market Dashboard"></a>',
+            "",
+            "</div>",
+            "",
+            "---",
+            "",
+            "## 지금 만드는 것",
+            "",
+        ]
+    )
 
-    for repo, meta, count, latest in project_rows:
-        lines.append(f"### [{meta['title']}]({meta['url']})")
-        lines.append(meta["description"])
-        if latest:
-            lines.append(
-                f"`최근 {now_days}일 주요 작업 {count}개` · 최근 작업: "
-                f"[{latest.message}]({latest.url})"
-            )
-        else:
-            lines.append(f"`최근 {now_days}일 주요 작업 없음`")
-        lines.append("")
+    lines.extend(project_cards(config, activities, now_days))
+    lines.extend(["", "## 최근 흐름", ""])
 
-    lines.append("## 🛠 최근 GitHub 작업")
-    lines.append("")
     if latest_activities:
-        lines.append("| 시각 | 저장소 | 작업 |")
+        lines.append("| 시각 | 프로젝트 | 작업 |")
         lines.append("|---|---|---|")
+        repo_titles = {
+            item["repo"]: item["title"] for item in config["tracked_repositories"]
+        }
         for activity in latest_activities:
             repo_url = f"https://github.com/{owner}/{activity.repo}"
+            repo_title = repo_titles.get(activity.repo, activity.repo)
             lines.append(
                 f"| {relative_time(activity.happened_at, tz)} | "
-                f"[{activity.repo}]({repo_url}) | [{activity.message}]({activity.url}) |"
+                f"[{markdown_cell(str(repo_title))}]({repo_url}) | "
+                f"[{markdown_cell(activity.message)}]({activity.url}) |"
             )
     else:
         lines.append("최근 표시할 주요 작업이 없습니다.")
+
+    lines.extend(["", "## 최근 리서치", ""])
+    lines.append(
+        f"> 전체 자료는 **[Market Memo 웹사이트]({market_memo_live})**에서 검색하고 읽을 수 있습니다."
+    )
     lines.append("")
 
-    lines.append("## 📝 최근 업데이트된 자료")
-    lines.append("")
     if recent_documents:
-        lines.append("| 시각 | 자료 |")
+        lines.append("| 업데이트 | 자료 |")
         lines.append("|---|---|")
         for document in recent_documents:
             lines.append(
                 f"| {relative_time(document.happened_at, tz)} | "
-                f"[{document.title}]({document.url}) |"
+                f"[{markdown_cell(document.title)}]({document.url}) |"
             )
     else:
         lines.append("최근 업데이트된 자료가 없습니다.")
-    lines.append("")
 
-    lines.append("## 👀 최근 관심 주제")
-    lines.append("")
+    lines.extend(["", "## 요즘 보는 것", ""])
     if interests:
-        for title, url in interests:
-            lines.append(f"- [{title}]({url})")
+        lines.append(" · ".join(f"[{title}]({url})" for title, url in interests))
     else:
-        lines.append("- 아직 표시할 관심 주제가 없습니다.")
-    lines.append("")
+        lines.append("아직 표시할 관심 주제가 없습니다.")
 
-    lines.append("## 📌 주요 프로젝트")
-    lines.append("")
-    for item in config["tracked_repositories"]:
-        lines.append(f"- **[{item['title']}]({item['url']})** — {item['description']}")
-    lines.append("")
+    lines.extend(
+        [
+            "",
+            "## 사용하는 도구",
+            "",
+            '<p align="left">',
+            '<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"> ',
+            '<img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java"> ',
+            '<img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot"> ',
+            '<img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Actions"> ',
+            '<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"> ',
+            '<img src="https://img.shields.io/badge/Raspberry%20Pi-A22846?style=flat-square&logo=raspberrypi&logoColor=white" alt="Raspberry Pi"> ',
+            '<img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white" alt="AWS">',
+            "</p>",
+            "",
+            "## 만드는 방식",
+            "",
+            "- **필요하면 직접 만듭니다.** 반복해서 확인하는 정보는 대시보드나 자동화로 바꿉니다.",
+            "- **기록은 다음 판단을 위한 데이터로 남깁니다.** 뉴스 한 줄보다 배경·원인·다음 단계를 연결합니다.",
+            "- **작게 만들고 계속 개선합니다.** 실제로 써보고 불편한 부분부터 고칩니다.",
+            "",
+            "---",
+            "",
+        ]
+    )
 
     if latest_activities:
         latest_source_time = max(a.happened_at for a in latest_activities).astimezone(tz)
-        lines.append(f"<sub>최근 활동 데이터 기준: {latest_source_time:%Y-%m-%d %H:%M} KST</sub>")
+        lines.append(
+            f"<sub>최근 활동 데이터 기준: {latest_source_time:%Y-%m-%d %H:%M} KST · "
+            "GitHub Actions가 주기적으로 자동 갱신합니다.</sub>"
+        )
         lines.append("")
-    lines.append("<!-- 이 README는 GitHub Actions가 실제 데이터가 바뀔 때만 자동 갱신합니다. -->")
 
+    lines.append("<!-- 이 README는 GitHub Actions가 실제 데이터가 바뀔 때만 자동 갱신합니다. -->")
     return "\n".join(lines).rstrip() + "\n"
 
 
