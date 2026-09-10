@@ -6,7 +6,7 @@
 
 ### [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground)
 한국 증시의 테마·거래대금·수급·시장 흐름을 한 화면에서 보기 위한 프로젝트
-`최근 7일 주요 작업 94개` · 최근 작업: [금일 이슈 일봉을 60일 표준 캔들로 개선](https://github.com/juhwan7/vibe-coding-playground/commit/7bc0fdf8c98aa12787f9fb1686b807eb444a6df2)
+`최근 7일 주요 작업 92개` · 최근 작업: [금일 이슈 일봉을 60일 표준 캔들로 개선](https://github.com/juhwan7/vibe-coding-playground/commit/7bc0fdf8c98aa12787f9fb1686b807eb444a6df2)
 
 ### [시장 메모](https://github.com/juhwan7/market-memo)
 시장 이슈·기업·테마·정책을 최신 상태로 축적하는 개인 리서치 노트
@@ -20,7 +20,7 @@
 | 오늘 10:51 | [market-memo](https://github.com/juhwan7/market-memo) | [종목분석: 소프트뱅크 그룹 기업 분석 추가](https://github.com/juhwan7/market-memo/commit/acc57c3c2fa1e912e20b1b16a4736c2fbb8130be) |
 | 오늘 10:12 | [market-memo](https://github.com/juhwan7/market-memo) | [무신사 IPO 감시 초기 상태 추가](https://github.com/juhwan7/market-memo/commit/b7f21a810575cc9002d474917350ac3b7d62bb51) |
 | 어제 22:01 | [vibe-coding-playground](https://github.com/juhwan7/vibe-coding-playground) | [금일 이슈 일봉을 60일 표준 캔들로 개선](https://github.com/juhwan7/vibe-coding-playground/commit/7bc0fdf8c98aa12787f9fb1686b807eb444a6df2) |
-| 어제 22:00 | [vibe-coding-playground](https://github.com/juhwan7/vibe-coding-playground) | [금일 이슈 일봉을 60일 표준 캔들로 개선](https://github.com/juhwan7/vibe-coding-playground/commit/00988ce98999cbea38b4345827985cc358757636) |
+| 어제 21:55 | [vibe-coding-playground](https://github.com/juhwan7/vibe-coding-playground) | [모바일 반응형 개선 기록](https://github.com/juhwan7/vibe-coding-playground/commit/3de3895493b0b3131a3696132c3a923954a018a4) |
 
 ## 👀 최근 관심 주제
 
