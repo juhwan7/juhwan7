@@ -15,14 +15,14 @@ recent_activity:
   limit: 5
   lookback_days: 14
   ignore_messages:
-    - README
-    - readme
-    - Merge
-    - merge
-    - 업데이트 기록
-    - 인덱스
-    - 자동감시:
-    - 프로필 자동 업데이트
+    - "README"
+    - "readme"
+    - "Merge"
+    - "merge"
+    - "업데이트 기록"
+    - "인덱스"
+    - "자동감시:"
+    - "프로필 자동 업데이트"
 
 interests:
   source_repo: market-memo
