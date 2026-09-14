@@ -21,7 +21,7 @@
 <h3>Market Memo</h3>
 <p>시장 이슈·기업·테마·정책을 구조화하고 최신 상태로 축적하는 개인 시장 지식베이스</p>
 <p><a href="https://juhwan7.github.io/market-memo/"><b>웹사이트 ↗</b></a> · <a href="https://github.com/juhwan7/market-memo">GitHub</a></p>
-<sub>최근 7일 주요 작업 67개 · 최근: <a href="https://github.com/juhwan7/market-memo/commit/edb41a7507c50ca9d54c2d668f1e9bc81ebaddab">Anthropic IPO 기대와 우려 최신화</a></sub>
+<sub>최근 7일 주요 작업 76개 · 최근: <a href="https://github.com/juhwan7/market-memo/commit/0b68676d4bddfe0febe4f17cef3d0bd989496a33">drive homepage recent updates from curated update log</a></sub>
 </td>
 <td width="50%" valign="top">
 <h3>시장 대시보드</h3>
@@ -36,9 +36,9 @@
 
 | 시각 | 프로젝트 | 작업 |
 |---|---|---|
-| 오늘 11:59 | [Market Memo](https://github.com/juhwan7/market-memo) | [Anthropic IPO 기대와 우려 최신화](https://github.com/juhwan7/market-memo/commit/edb41a7507c50ca9d54c2d668f1e9bc81ebaddab) |
-| 오늘 10:01 | [Market Memo](https://github.com/juhwan7/market-memo) | [Index daily morning market briefing](https://github.com/juhwan7/market-memo/commit/be094ce7fc69a8eae89019848513e37344f3605f) |
-| 오늘 10:01 | [Market Memo](https://github.com/juhwan7/market-memo) | [Index 2026-09-14 morning market briefing](https://github.com/juhwan7/market-memo/commit/c721bcda9a830b9675a9f87fae6a3caaab0b88f1) |
+| 오늘 21:47 | [Market Memo](https://github.com/juhwan7/market-memo) | [drive homepage recent updates from curated update log](https://github.com/juhwan7/market-memo/commit/0b68676d4bddfe0febe4f17cef3d0bd989496a33) |
+| 오늘 21:44 | [Market Memo](https://github.com/juhwan7/market-memo) | [reduce homepage hero space](https://github.com/juhwan7/market-memo/commit/2cbdb2a4a8eacc6e1360d5d66417a45e434c4d80) |
+| 오늘 21:44 | [Market Memo](https://github.com/juhwan7/market-memo) | [compact homepage header](https://github.com/juhwan7/market-memo/commit/ed014a0291059d829650f36ffcd0fb6ea653cea9) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [Firebase 구성 원칙 기록](https://github.com/juhwan7/vibe-coding-playground/commit/056f41f3e3b9d24d93289c8ef8b7e03b8a628fc2) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [Firebase 설정 변경사항 기록](https://github.com/juhwan7/vibe-coding-playground/commit/e251cdc1377196224bddb84fbc4465df7498f1c5) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [잠금파일 자동 갱신 push 충돌 처리](https://github.com/juhwan7/vibe-coding-playground/commit/3245e1e68a91412505fed60583ca2b6642ffc877) |
@@ -49,16 +49,16 @@
 
 | 업데이트 | 자료 |
 |---|---|
+| 오늘 21:18 | [2026 09 14 광통신·양자·보안 관련주 강세 — 젠슨 황 보안 발언과 AI 광네트워크·양자 지원의 연장선](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%ED%95%9C%EA%B5%AD%EC%A6%9D%EC%8B%9C/2026-09-14-%EA%B4%91%ED%86%B5%EC%8B%A0-%EC%96%91%EC%9E%90%EC%BB%B4%ED%93%A8%ED%84%B0-%EA%B0%95%EC%84%B8/) |
 | 오늘 11:59 | [Anthropic IPO — 기대감과 우려, 2조 달러 가치가 성립하려면 무엇이 필요한가](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/Anthropic/) |
 | 오늘 10:01 | [2026 09 14 아침 증시 브리핑 — 유가·FOMC·반도체·KRX 애프터마켓](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-14-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
 | 오늘 03:16 | [AI 개발 속도조절 논쟁 — OpenAI·Anthropic의 pacing과 시장 영향](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/AI-%EC%A0%95%EC%B1%85/AI-%EA%B0%9C%EB%B0%9C-%EC%86%8D%EB%8F%84%EC%A1%B0%EC%A0%88-%EB%85%BC%EC%9F%81/) |
 | 어제 07:27 | [OpenAI — GPT 6 Astra 수요·접근성·컴퓨트 상태](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/) |
 | 어제 04:20 | [트럼프 5,000달러 Trump Dividend 공약](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%EB%AF%B8%EA%B5%AD%EC%A0%95%EC%B1%85/%ED%8A%B8%EB%9F%BC%ED%94%84-5000%EB%8B%AC%EB%9F%AC-%EB%B0%B0%EB%8B%B9-%EA%B3%B5%EC%95%BD/) |
-| 어제 01:39 | [Anthropic 2030 미국경제 시나리오 — AI가 성장·일자리·임금·자본을 어떻게 바꿀까](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/AI-%EA%B2%BD%EC%A0%9C/Anthropic-2030-%EB%AF%B8%EA%B5%AD%EA%B2%BD%EC%A0%9C-%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4/) |
 
 ## 요즘 보는 것
 
-[Anthropic IPO — 기대감과 우려, 2조 달러 가치가 성립하려면 무엇이 필요한가](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/Anthropic/) · [2026 09 14 아침 증시 브리핑 — 유가·FOMC·반도체·KRX 애프터마켓](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-14-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) · [AI 개발 속도조절 논쟁 — OpenAI·Anthropic의 pacing과 시장 영향](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/AI-%EC%A0%95%EC%B1%85/AI-%EA%B0%9C%EB%B0%9C-%EC%86%8D%EB%8F%84%EC%A1%B0%EC%A0%88-%EB%85%BC%EC%9F%81/) · [트럼프 5,000달러 Trump Dividend 공약](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%EB%AF%B8%EA%B5%AD%EC%A0%95%EC%B1%85/%ED%8A%B8%EB%9F%BC%ED%94%84-5000%EB%8B%AC%EB%9F%AC-%EB%B0%B0%EB%8B%B9-%EA%B3%B5%EC%95%BD/) · [Anthropic 2030 미국경제 시나리오 — AI가 성장·일자리·임금·자본을 어떻게 바꿀까](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/AI-%EA%B2%BD%EC%A0%9C/Anthropic-2030-%EB%AF%B8%EA%B5%AD%EA%B2%BD%EC%A0%9C-%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4/) · [OpenAI — GPT 6 Astra 수요·접근성·컴퓨트 상태](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/)
+[2026 09 14 광통신·양자·보안 관련주 강세 — 젠슨 황 보안 발언과 AI 광네트워크·양자 지원의 연장선](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%ED%95%9C%EA%B5%AD%EC%A6%9D%EC%8B%9C/2026-09-14-%EA%B4%91%ED%86%B5%EC%8B%A0-%EC%96%91%EC%9E%90%EC%BB%B4%ED%93%A8%ED%84%B0-%EA%B0%95%EC%84%B8/) · [Anthropic IPO — 기대감과 우려, 2조 달러 가치가 성립하려면 무엇이 필요한가](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/Anthropic/) · [2026 09 14 아침 증시 브리핑 — 유가·FOMC·반도체·KRX 애프터마켓](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-14-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) · [AI 개발 속도조절 논쟁 — OpenAI·Anthropic의 pacing과 시장 영향](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/AI-%EC%A0%95%EC%B1%85/AI-%EA%B0%9C%EB%B0%9C-%EC%86%8D%EB%8F%84%EC%A1%B0%EC%A0%88-%EB%85%BC%EC%9F%81/) · [트럼프 5,000달러 Trump Dividend 공약](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%EB%AF%B8%EA%B5%AD%EC%A0%95%EC%B1%85/%ED%8A%B8%EB%9F%BC%ED%94%84-5000%EB%8B%AC%EB%9F%AC-%EB%B0%B0%EB%8B%B9-%EA%B3%B5%EC%95%BD/) · [Anthropic 2030 미국경제 시나리오 — AI가 성장·일자리·임금·자본을 어떻게 바꿀까](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/AI-%EA%B2%BD%EC%A0%9C/Anthropic-2030-%EB%AF%B8%EA%B5%AD%EA%B2%BD%EC%A0%9C-%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4/)
 
 ## 사용하는 도구
 
@@ -80,6 +80,6 @@
 
 ---
 
-<sub>최근 활동 데이터 기준: 2026-09-14 11:59 KST · GitHub Actions가 주기적으로 자동 갱신합니다.</sub>
+<sub>최근 활동 데이터 기준: 2026-09-14 21:47 KST · GitHub Actions가 주기적으로 자동 갱신합니다.</sub>
 
 <!-- 이 README는 GitHub Actions가 실제 데이터가 바뀔 때만 자동 갱신합니다. -->
