@@ -21,7 +21,7 @@
 <h3>Market Memo</h3>
 <p>시장 이슈·기업·테마·정책을 구조화하고 최신 상태로 축적하는 개인 시장 지식베이스</p>
 <p><a href="https://juhwan7.github.io/market-memo/"><b>웹사이트 ↗</b></a> · <a href="https://github.com/juhwan7/market-memo">GitHub</a></p>
-<sub>최근 7일 주요 작업 74개 · 최근: <a href="https://github.com/juhwan7/market-memo/commit/3b510a31612724095fa9fd7458d45dafb0c6aadc">미국 800MHz D2D 주파수 경쟁 정리</a></sub>
+<sub>최근 7일 주요 작업 73개 · 최근: <a href="https://github.com/juhwan7/market-memo/commit/58103b0cb024493192fd71393f765cec1ca25ed2">9월 16일 아침 증시 브리핑 추가</a></sub>
 </td>
 <td width="50%" valign="top">
 <h3>시장 대시보드</h3>
@@ -36,9 +36,9 @@
 
 | 시각 | 프로젝트 | 작업 |
 |---|---|---|
+| 오늘 06:32 | [Market Memo](https://github.com/juhwan7/market-memo) | [9월 16일 아침 증시 브리핑 추가](https://github.com/juhwan7/market-memo/commit/58103b0cb024493192fd71393f765cec1ca25ed2) |
 | 어제 21:13 | [Market Memo](https://github.com/juhwan7/market-memo) | [미국 800MHz D2D 주파수 경쟁 정리](https://github.com/juhwan7/market-memo/commit/3b510a31612724095fa9fd7458d45dafb0c6aadc) |
 | 어제 07:32 | [Market Memo](https://github.com/juhwan7/market-memo) | [surface Cybercab NHTSA update](https://github.com/juhwan7/market-memo/commit/46f3df21892b80ac8742467249cc650deaf47973) |
-| 어제 07:31 | [Market Memo](https://github.com/juhwan7/market-memo) | [update Tesla Cybercab index](https://github.com/juhwan7/market-memo/commit/7a116c03f7e4ccbc6f33b1030736d382c696913b) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [Firebase 구성 원칙 기록](https://github.com/juhwan7/vibe-coding-playground/commit/056f41f3e3b9d24d93289c8ef8b7e03b8a628fc2) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [Firebase 설정 변경사항 기록](https://github.com/juhwan7/vibe-coding-playground/commit/e251cdc1377196224bddb84fbc4465df7498f1c5) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [잠금파일 자동 갱신 push 충돌 처리](https://github.com/juhwan7/vibe-coding-playground/commit/3245e1e68a91412505fed60583ca2b6642ffc877) |
@@ -49,16 +49,15 @@
 
 | 업데이트 | 자료 |
 |---|---|
+| 오늘 06:32 | [2026 09 16 아침 증시 브리핑 — FOMC·미 10년물 5%·사우디 원유 차질](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-16-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
 | 어제 21:13 | [미국 800MHz D2D 주파수 경쟁 — ‘FCC 경매’가 아니라 Grain의 민간 경쟁 절차](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%EC%9C%84%EC%84%B1%ED%86%B5%EC%8B%A0/%EB%AF%B8%EA%B5%AD-800MHz-D2D-%EC%A3%BC%ED%8C%8C%EC%88%98-%EA%B2%BD%EC%9F%81/) |
-| 어제 07:31 | [TSLA 테슬라](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%AF%B8%EA%B5%AD%EC%A3%BC%EC%8B%9D/TSLA-%ED%85%8C%EC%8A%AC%EB%9D%BC/) |
 | 어제 01:08 | [두산퓨얼셀(336260) — 미국 AI 데이터센터 연료전지 수주, 실적으로 이어질까](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%ED%95%9C%EA%B5%AD%EC%A3%BC%EC%8B%9D/336260-%EB%91%90%EC%82%B0%ED%93%A8%EC%96%BC%EC%85%80/) |
 | 9월 15일 | [2026 09 15 아침 증시 브리핑 — AI 감속론·미 10년물 5%·유가·FOMC](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-15-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
 | 9월 15일 | [OpenAI — GPT 6 Astra 수요·접근성·컴퓨트 상태](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/) |
-| 9월 14일 | [원유가 오르면 왜 삼성전자·SK하이닉스 같은 반도체주가 떨어질까](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%EB%B0%98%EB%8F%84%EC%B2%B4/%EC%9B%90%EC%9C%A0%EA%B0%80%EA%B2%A9-%EC%83%81%EC%8A%B9-%EB%B0%98%EB%8F%84%EC%B2%B4%EC%A3%BC-%EC%98%81%ED%96%A5/) |
 
 ## 요즘 보는 것
 
-[미국 800MHz D2D 주파수 경쟁 — ‘FCC 경매’가 아니라 Grain의 민간 경쟁 절차](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%EC%9C%84%EC%84%B1%ED%86%B5%EC%8B%A0/%EB%AF%B8%EA%B5%AD-800MHz-D2D-%EC%A3%BC%ED%8C%8C%EC%88%98-%EA%B2%BD%EC%9F%81/) · [두산퓨얼셀(336260) — 미국 AI 데이터센터 연료전지 수주, 실적으로 이어질까](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%ED%95%9C%EA%B5%AD%EC%A3%BC%EC%8B%9D/336260-%EB%91%90%EC%82%B0%ED%93%A8%EC%96%BC%EC%85%80/) · [2026 09 15 아침 증시 브리핑 — AI 감속론·미 10년물 5%·유가·FOMC](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-15-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) · [OpenAI — GPT 6 Astra 수요·접근성·컴퓨트 상태](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/) · [원유가 오르면 왜 삼성전자·SK하이닉스 같은 반도체주가 떨어질까](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%EB%B0%98%EB%8F%84%EC%B2%B4/%EC%9B%90%EC%9C%A0%EA%B0%80%EA%B2%A9-%EC%83%81%EC%8A%B9-%EB%B0%98%EB%8F%84%EC%B2%B4%EC%A3%BC-%EC%98%81%ED%96%A5/) · [삼성전자·SK하이닉스, 한전 25조원 전기요금 선납 제안 거절 — 무엇이 문제였나](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%EC%A0%84%EB%A0%A5%EC%9D%B8%ED%94%84%EB%9D%BC/%ED%95%9C%EC%A0%84-25%EC%A1%B0-%EC%A0%84%EA%B8%B0%EC%9A%94%EA%B8%88-%EC%84%A0%EB%82%A9-%EA%B1%B0%EC%A0%88/)
+[2026 09 16 아침 증시 브리핑 — FOMC·미 10년물 5%·사우디 원유 차질](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-16-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) · [미국 800MHz D2D 주파수 경쟁 — ‘FCC 경매’가 아니라 Grain의 민간 경쟁 절차](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%EC%9C%84%EC%84%B1%ED%86%B5%EC%8B%A0/%EB%AF%B8%EA%B5%AD-800MHz-D2D-%EC%A3%BC%ED%8C%8C%EC%88%98-%EA%B2%BD%EC%9F%81/) · [두산퓨얼셀(336260) — 미국 AI 데이터센터 연료전지 수주, 실적으로 이어질까](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%ED%95%9C%EA%B5%AD%EC%A3%BC%EC%8B%9D/336260-%EB%91%90%EC%82%B0%ED%93%A8%EC%96%BC%EC%85%80/) · [2026 09 15 아침 증시 브리핑 — AI 감속론·미 10년물 5%·유가·FOMC](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-15-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) · [OpenAI — GPT 6 Astra 수요·접근성·컴퓨트 상태](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/)
 
 ## 사용하는 도구
 
@@ -80,6 +79,6 @@
 
 ---
 
-<sub>최근 활동 데이터 기준: 2026-09-16 21:13 KST · GitHub Actions가 주기적으로 자동 갱신합니다.</sub>
+<sub>최근 활동 데이터 기준: 2026-09-17 06:32 KST · GitHub Actions가 주기적으로 자동 갱신합니다.</sub>
 
 <!-- 이 README는 GitHub Actions가 실제 데이터가 바뀔 때만 자동 갱신합니다. -->
