@@ -27,7 +27,7 @@
 <h3>시장 대시보드</h3>
 <p>한국 증시의 테마·거래대금·수급·시장 흐름을 한 화면에서 보기 위한 시장 모니터링 프로젝트</p>
 <p><a href="https://github.com/juhwan7/vibe-coding-playground">GitHub</a></p>
-<sub>최근 7일 주요 작업 17개 · 최근: <a href="https://github.com/juhwan7/vibe-coding-playground/commit/056f41f3e3b9d24d93289c8ef8b7e03b8a628fc2">Firebase 구성 원칙 기록</a></sub>
+<sub>최근 7일 주요 작업 10개 · 최근: <a href="https://github.com/juhwan7/vibe-coding-playground/commit/056f41f3e3b9d24d93289c8ef8b7e03b8a628fc2">Firebase 구성 원칙 기록</a></sub>
 </td>
 </tr>
 </table>
