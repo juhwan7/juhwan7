@@ -21,7 +21,7 @@
 <h3>Market Memo</h3>
 <p>시장 이슈·기업·테마·정책을 구조화하고 최신 상태로 축적하는 개인 시장 지식베이스</p>
 <p><a href="https://juhwan7.github.io/market-memo/"><b>웹사이트 ↗</b></a> · <a href="https://github.com/juhwan7/market-memo">GitHub</a></p>
-<sub>최근 7일 주요 작업 83개 · 최근: <a href="https://github.com/juhwan7/market-memo/commit/a13860a2552e27b648b3d3d134e8c657bf5005fe">index 2026-09-18 morning market briefing</a></sub>
+<sub>최근 7일 주요 작업 83개 · 최근: <a href="https://github.com/juhwan7/market-memo/commit/f37b9dc701a2fed0ef4a9c55f39965dce282f02a">Update Sep 18 briefing index after BOJ decision</a></sub>
 </td>
 <td width="50%" valign="top">
 <h3>시장 대시보드</h3>
@@ -36,9 +36,9 @@
 
 | 시각 | 프로젝트 | 작업 |
 |---|---|---|
+| 오늘 06:30 | [Market Memo](https://github.com/juhwan7/market-memo) | [Update Sep 18 briefing index after BOJ decision](https://github.com/juhwan7/market-memo/commit/f37b9dc701a2fed0ef4a9c55f39965dce282f02a) |
+| 오늘 06:30 | [Market Memo](https://github.com/juhwan7/market-memo) | [Update Sep 18 morning briefing with BOJ decision and latest market facts](https://github.com/juhwan7/market-memo/commit/99848ce04c36d749d65d6857e75af78675bd960a) |
 | 어제 07:00 | [Market Memo](https://github.com/juhwan7/market-memo) | [index 2026-09-18 morning market briefing](https://github.com/juhwan7/market-memo/commit/a13860a2552e27b648b3d3d134e8c657bf5005fe) |
-| 어제 07:00 | [Market Memo](https://github.com/juhwan7/market-memo) | [add 2026-09-18 morning brief to recent updates](https://github.com/juhwan7/market-memo/commit/6a13dd169e67aaad4c6e11752d12a204af15ad94) |
-| 어제 06:59 | [Market Memo](https://github.com/juhwan7/market-memo) | [add 2026-09-18 morning market briefing](https://github.com/juhwan7/market-memo/commit/e2c0e9d72a53d77594ccdc510789a2ce512255d3) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [Firebase 구성 원칙 기록](https://github.com/juhwan7/vibe-coding-playground/commit/056f41f3e3b9d24d93289c8ef8b7e03b8a628fc2) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [Firebase 설정 변경사항 기록](https://github.com/juhwan7/vibe-coding-playground/commit/e251cdc1377196224bddb84fbc4465df7498f1c5) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [잠금파일 자동 갱신 push 충돌 처리](https://github.com/juhwan7/vibe-coding-playground/commit/3245e1e68a91412505fed60583ca2b6642ffc877) |
@@ -49,7 +49,7 @@
 
 | 업데이트 | 자료 |
 |---|---|
-| 어제 06:59 | [2026 09 18 아침 증시 브리핑](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-18-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
+| 오늘 06:30 | [2026 09 18 아침 증시 브리핑](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-18-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
 | 어제 06:50 | [OpenAI — GPT 6 Astra 수요·접근성·컴퓨트 상태](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/) |
 | 어제 06:30 | [2026 09 17 아침 증시 브리핑 — Fed 첫 인상·유가 진정·SK하이닉스 미국 생산 논의](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-17-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
 | 어제 04:17 | [트럼프 5,000달러 Trump Dividend 공약](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%EB%AF%B8%EA%B5%AD%EC%A0%95%EC%B1%85/%ED%8A%B8%EB%9F%BC%ED%94%84-5000%EB%8B%AC%EB%9F%AC-%EB%B0%B0%EB%8B%B9-%EA%B3%B5%EC%95%BD/) |
@@ -80,6 +80,6 @@
 
 ---
 
-<sub>최근 활동 데이터 기준: 2026-09-18 07:00 KST · GitHub Actions가 주기적으로 자동 갱신합니다.</sub>
+<sub>최근 활동 데이터 기준: 2026-09-19 06:30 KST · GitHub Actions가 주기적으로 자동 갱신합니다.</sub>
 
 <!-- 이 README는 GitHub Actions가 실제 데이터가 바뀔 때만 자동 갱신합니다. -->
