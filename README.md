@@ -21,7 +21,7 @@
 <h3>Market Memo</h3>
 <p>시장 이슈·기업·테마·정책을 구조화하고 최신 상태로 축적하는 개인 시장 지식베이스</p>
 <p><a href="https://juhwan7.github.io/market-memo/"><b>웹사이트 ↗</b></a> · <a href="https://github.com/juhwan7/market-memo">GitHub</a></p>
-<sub>최근 7일 주요 작업 75개 · 최근: <a href="https://github.com/juhwan7/market-memo/commit/a89b17d153bc2e10e1125be45324ebdd69ebd41f">Update global briefing index for 2026-09-19</a></sub>
+<sub>최근 7일 주요 작업 77개 · 최근: <a href="https://github.com/juhwan7/market-memo/commit/c5941c190b733b137c07e9a2e937f4790a8e441d">index Sep 20 morning market briefing</a></sub>
 </td>
 <td width="50%" valign="top">
 <h3>시장 대시보드</h3>
@@ -36,9 +36,9 @@
 
 | 시각 | 프로젝트 | 작업 |
 |---|---|---|
+| 오늘 06:32 | [Market Memo](https://github.com/juhwan7/market-memo) | [index Sep 20 morning market briefing](https://github.com/juhwan7/market-memo/commit/c5941c190b733b137c07e9a2e937f4790a8e441d) |
+| 오늘 06:31 | [Market Memo](https://github.com/juhwan7/market-memo) | [add Sep 20 morning market briefing](https://github.com/juhwan7/market-memo/commit/3f9b1f498199c1297f4399b065765c9c5fa1597a) |
 | 어제 06:30 | [Market Memo](https://github.com/juhwan7/market-memo) | [Update global briefing index for 2026-09-19](https://github.com/juhwan7/market-memo/commit/a89b17d153bc2e10e1125be45324ebdd69ebd41f) |
-| 어제 06:29 | [Market Memo](https://github.com/juhwan7/market-memo) | [Add 2026-09-19 morning market briefing](https://github.com/juhwan7/market-memo/commit/e8428a94d045521b753fc91bdaa3848a7b4091ff) |
-| 9월 19일 | [Market Memo](https://github.com/juhwan7/market-memo) | [refresh OpenAI index for Astra spend signal](https://github.com/juhwan7/market-memo/commit/cb1569ec37cd9465ba2f5c00e05290597e261aa8) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [Firebase 구성 원칙 기록](https://github.com/juhwan7/vibe-coding-playground/commit/056f41f3e3b9d24d93289c8ef8b7e03b8a628fc2) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [Firebase 설정 변경사항 기록](https://github.com/juhwan7/vibe-coding-playground/commit/e251cdc1377196224bddb84fbc4465df7498f1c5) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [잠금파일 자동 갱신 push 충돌 처리](https://github.com/juhwan7/vibe-coding-playground/commit/3245e1e68a91412505fed60583ca2b6642ffc877) |
@@ -80,6 +80,6 @@
 
 ---
 
-<sub>최근 활동 데이터 기준: 2026-09-20 06:30 KST · GitHub Actions가 주기적으로 자동 갱신합니다.</sub>
+<sub>최근 활동 데이터 기준: 2026-09-21 06:32 KST · GitHub Actions가 주기적으로 자동 갱신합니다.</sub>
 
 <!-- 이 README는 GitHub Actions가 실제 데이터가 바뀔 때만 자동 갱신합니다. -->
