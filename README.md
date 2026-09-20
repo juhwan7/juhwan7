@@ -36,9 +36,9 @@
 
 | 시각 | 프로젝트 | 작업 |
 |---|---|---|
-| 오늘 06:30 | [Market Memo](https://github.com/juhwan7/market-memo) | [Update global briefing index for 2026-09-19](https://github.com/juhwan7/market-memo/commit/a89b17d153bc2e10e1125be45324ebdd69ebd41f) |
-| 오늘 06:29 | [Market Memo](https://github.com/juhwan7/market-memo) | [Add 2026-09-19 morning market briefing](https://github.com/juhwan7/market-memo/commit/e8428a94d045521b753fc91bdaa3848a7b4091ff) |
-| 어제 13:22 | [Market Memo](https://github.com/juhwan7/market-memo) | [refresh OpenAI index for Astra spend signal](https://github.com/juhwan7/market-memo/commit/cb1569ec37cd9465ba2f5c00e05290597e261aa8) |
+| 어제 06:30 | [Market Memo](https://github.com/juhwan7/market-memo) | [Update global briefing index for 2026-09-19](https://github.com/juhwan7/market-memo/commit/a89b17d153bc2e10e1125be45324ebdd69ebd41f) |
+| 어제 06:29 | [Market Memo](https://github.com/juhwan7/market-memo) | [Add 2026-09-19 morning market briefing](https://github.com/juhwan7/market-memo/commit/e8428a94d045521b753fc91bdaa3848a7b4091ff) |
+| 9월 19일 | [Market Memo](https://github.com/juhwan7/market-memo) | [refresh OpenAI index for Astra spend signal](https://github.com/juhwan7/market-memo/commit/cb1569ec37cd9465ba2f5c00e05290597e261aa8) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [Firebase 구성 원칙 기록](https://github.com/juhwan7/vibe-coding-playground/commit/056f41f3e3b9d24d93289c8ef8b7e03b8a628fc2) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [Firebase 설정 변경사항 기록](https://github.com/juhwan7/vibe-coding-playground/commit/e251cdc1377196224bddb84fbc4465df7498f1c5) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [잠금파일 자동 갱신 push 충돌 처리](https://github.com/juhwan7/vibe-coding-playground/commit/3245e1e68a91412505fed60583ca2b6642ffc877) |
@@ -49,8 +49,8 @@
 
 | 업데이트 | 자료 |
 |---|---|
-| 어제 13:21 | [OpenAI — GPT 6 Astra 수요·접근성·컴퓨트 상태](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/) |
-| 어제 06:30 | [2026 09 18 아침 증시 브리핑](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-18-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
+| 9월 19일 | [OpenAI — GPT 6 Astra 수요·접근성·컴퓨트 상태](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/) |
+| 9월 19일 | [2026 09 18 아침 증시 브리핑](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-18-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
 | 9월 18일 | [2026 09 17 아침 증시 브리핑 — Fed 첫 인상·유가 진정·SK하이닉스 미국 생산 논의](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-17-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
 | 9월 18일 | [트럼프 5,000달러 Trump Dividend 공약](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%EB%AF%B8%EA%B5%AD%EC%A0%95%EC%B1%85/%ED%8A%B8%EB%9F%BC%ED%94%84-5000%EB%8B%AC%EB%9F%AC-%EB%B0%B0%EB%8B%B9-%EA%B3%B5%EC%95%BD/) |
 | 9월 17일 | [2026 09 16 아침 증시 브리핑 — FOMC·미 10년물 5%·사우디 원유 차질](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-16-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
