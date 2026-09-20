@@ -21,7 +21,7 @@
 <h3>Market Memo</h3>
 <p>시장 이슈·기업·테마·정책을 구조화하고 최신 상태로 축적하는 개인 시장 지식베이스</p>
 <p><a href="https://juhwan7.github.io/market-memo/"><b>웹사이트 ↗</b></a> · <a href="https://github.com/juhwan7/market-memo">GitHub</a></p>
-<sub>최근 7일 주요 작업 79개 · 최근: <a href="https://github.com/juhwan7/market-memo/commit/a89b17d153bc2e10e1125be45324ebdd69ebd41f">Update global briefing index for 2026-09-19</a></sub>
+<sub>최근 7일 주요 작업 75개 · 최근: <a href="https://github.com/juhwan7/market-memo/commit/a89b17d153bc2e10e1125be45324ebdd69ebd41f">Update global briefing index for 2026-09-19</a></sub>
 </td>
 <td width="50%" valign="top">
 <h3>시장 대시보드</h3>
