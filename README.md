@@ -36,9 +36,9 @@
 
 | 시각 | 프로젝트 | 작업 |
 |---|---|---|
-| 오늘 07:12 | [Market Memo](https://github.com/juhwan7/market-memo) | [refresh root index for Airbnb Astra enterprise expansion](https://github.com/juhwan7/market-memo/commit/cc79a9d2d0dd1b86d2cfc0e6e4bde60cb832bf2e) |
-| 오늘 07:12 | [Market Memo](https://github.com/juhwan7/market-memo) | [refresh OpenAI index for Airbnb Astra expansion](https://github.com/juhwan7/market-memo/commit/5e0b7884d2e23fa214478f1aa4c558d230fb018f) |
-| 오늘 07:12 | [Market Memo](https://github.com/juhwan7/market-memo) | [update Astra watch state for Airbnb enterprise adoption](https://github.com/juhwan7/market-memo/commit/6dbeb83483542cdd22300d42c21de062944297b2) |
+| 어제 07:12 | [Market Memo](https://github.com/juhwan7/market-memo) | [refresh root index for Airbnb Astra enterprise expansion](https://github.com/juhwan7/market-memo/commit/cc79a9d2d0dd1b86d2cfc0e6e4bde60cb832bf2e) |
+| 어제 07:12 | [Market Memo](https://github.com/juhwan7/market-memo) | [refresh OpenAI index for Airbnb Astra expansion](https://github.com/juhwan7/market-memo/commit/5e0b7884d2e23fa214478f1aa4c558d230fb018f) |
+| 어제 07:12 | [Market Memo](https://github.com/juhwan7/market-memo) | [update Astra watch state for Airbnb enterprise adoption](https://github.com/juhwan7/market-memo/commit/6dbeb83483542cdd22300d42c21de062944297b2) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [Firebase 구성 원칙 기록](https://github.com/juhwan7/vibe-coding-playground/commit/056f41f3e3b9d24d93289c8ef8b7e03b8a628fc2) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [Firebase 설정 변경사항 기록](https://github.com/juhwan7/vibe-coding-playground/commit/e251cdc1377196224bddb84fbc4465df7498f1c5) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [잠금파일 자동 갱신 push 충돌 처리](https://github.com/juhwan7/vibe-coding-playground/commit/3245e1e68a91412505fed60583ca2b6642ffc877) |
@@ -49,7 +49,7 @@
 
 | 업데이트 | 자료 |
 |---|---|
-| 오늘 07:12 | [OpenAI — GPT 6 Astra 수요·접근성·컴퓨트 상태](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/) |
+| 어제 07:12 | [OpenAI — GPT 6 Astra 수요·접근성·컴퓨트 상태](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/) |
 | 9월 22일 | [2026 09 22 아침 증시 브리핑 — 미국 AI 반도체 랠리·유가 급락·미중 정상회담](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-22-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
 | 9월 21일 | [2026 09 21 삼성전자 상승 이유 — HBM4·메모리 업황 기대에 글로벌 반도체 반등과 수급 회복이 겹쳤다](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%ED%95%9C%EA%B5%AD%EC%A6%9D%EC%8B%9C/2026-09-21-%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-%EC%83%81%EC%8A%B9-%EC%9D%B4%EC%9C%A0/) |
 | 9월 19일 | [2026 09 18 아침 증시 브리핑](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-18-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
