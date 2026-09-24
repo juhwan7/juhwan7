@@ -21,7 +21,7 @@
 <h3>Market Memo</h3>
 <p>시장 이슈·기업·테마·정책을 구조화하고 최신 상태로 축적하는 개인 시장 지식베이스</p>
 <p><a href="https://juhwan7.github.io/market-memo/"><b>웹사이트 ↗</b></a> · <a href="https://github.com/juhwan7/market-memo">GitHub</a></p>
-<sub>최근 7일 주요 작업 38개 · 최근: <a href="https://github.com/juhwan7/market-memo/commit/75f5a764af04a5a292d7903f3cfde4dd12e04db6">Index 2026-09-23 morning market briefing</a></sub>
+<sub>최근 7일 주요 작업 44개 · 최근: <a href="https://github.com/juhwan7/market-memo/commit/cc79a9d2d0dd1b86d2cfc0e6e4bde60cb832bf2e">refresh root index for Airbnb Astra enterprise expansion</a></sub>
 </td>
 <td width="50%" valign="top">
 <h3>시장 대시보드</h3>
@@ -36,9 +36,9 @@
 
 | 시각 | 프로젝트 | 작업 |
 |---|---|---|
-| 어제 06:32 | [Market Memo](https://github.com/juhwan7/market-memo) | [Index 2026-09-23 morning market briefing](https://github.com/juhwan7/market-memo/commit/75f5a764af04a5a292d7903f3cfde4dd12e04db6) |
-| 어제 06:32 | [Market Memo](https://github.com/juhwan7/market-memo) | [Add 2026-09-23 morning market briefing](https://github.com/juhwan7/market-memo/commit/dde11dbfd11a756a33c7b1734e071c40ef48d2f1) |
-| 9월 22일 | [Market Memo](https://github.com/juhwan7/market-memo) | [index 2026-09-22 morning briefing](https://github.com/juhwan7/market-memo/commit/95ef539727b706455bae34b62cc0763b7b5f6619) |
+| 오늘 07:12 | [Market Memo](https://github.com/juhwan7/market-memo) | [refresh root index for Airbnb Astra enterprise expansion](https://github.com/juhwan7/market-memo/commit/cc79a9d2d0dd1b86d2cfc0e6e4bde60cb832bf2e) |
+| 오늘 07:12 | [Market Memo](https://github.com/juhwan7/market-memo) | [refresh OpenAI index for Airbnb Astra expansion](https://github.com/juhwan7/market-memo/commit/5e0b7884d2e23fa214478f1aa4c558d230fb018f) |
+| 오늘 07:12 | [Market Memo](https://github.com/juhwan7/market-memo) | [update Astra watch state for Airbnb enterprise adoption](https://github.com/juhwan7/market-memo/commit/6dbeb83483542cdd22300d42c21de062944297b2) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [Firebase 구성 원칙 기록](https://github.com/juhwan7/vibe-coding-playground/commit/056f41f3e3b9d24d93289c8ef8b7e03b8a628fc2) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [Firebase 설정 변경사항 기록](https://github.com/juhwan7/vibe-coding-playground/commit/e251cdc1377196224bddb84fbc4465df7498f1c5) |
 | 9월 12일 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [잠금파일 자동 갱신 push 충돌 처리](https://github.com/juhwan7/vibe-coding-playground/commit/3245e1e68a91412505fed60583ca2b6642ffc877) |
@@ -49,9 +49,9 @@
 
 | 업데이트 | 자료 |
 |---|---|
+| 오늘 07:12 | [OpenAI — GPT 6 Astra 수요·접근성·컴퓨트 상태](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/) |
 | 9월 22일 | [2026 09 22 아침 증시 브리핑 — 미국 AI 반도체 랠리·유가 급락·미중 정상회담](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-22-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
 | 9월 21일 | [2026 09 21 삼성전자 상승 이유 — HBM4·메모리 업황 기대에 글로벌 반도체 반등과 수급 회복이 겹쳤다](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%ED%95%9C%EA%B5%AD%EC%A6%9D%EC%8B%9C/2026-09-21-%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-%EC%83%81%EC%8A%B9-%EC%9D%B4%EC%9C%A0/) |
-| 9월 19일 | [OpenAI — GPT 6 Astra 수요·접근성·컴퓨트 상태](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/) |
 | 9월 19일 | [2026 09 18 아침 증시 브리핑](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-18-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
 | 9월 18일 | [2026 09 17 아침 증시 브리핑 — Fed 첫 인상·유가 진정·SK하이닉스 미국 생산 논의](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-17-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
 | 9월 18일 | [트럼프 5,000달러 Trump Dividend 공약](https://juhwan7.github.io/market-memo/%EC%82%B0%EC%97%85-%ED%85%8C%EB%A7%88/%EB%AF%B8%EA%B5%AD%EC%A0%95%EC%B1%85/%ED%8A%B8%EB%9F%BC%ED%94%84-5000%EB%8B%AC%EB%9F%AC-%EB%B0%B0%EB%8B%B9-%EA%B3%B5%EC%95%BD/) |
@@ -80,6 +80,6 @@
 
 ---
 
-<sub>최근 활동 데이터 기준: 2026-09-23 06:32 KST · GitHub Actions가 주기적으로 자동 갱신합니다.</sub>
+<sub>최근 활동 데이터 기준: 2026-09-24 07:12 KST · GitHub Actions가 주기적으로 자동 갱신합니다.</sub>
 
 <!-- 이 README는 GitHub Actions가 실제 데이터가 바뀔 때만 자동 갱신합니다. -->
