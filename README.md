@@ -36,12 +36,12 @@
 
 | 시각 | 프로젝트 | 작업 |
 |---|---|---|
-| 오늘 12:40 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [publish Toss six-minute batch for stock-autoresearch](https://github.com/juhwan7/vibe-coding-playground/commit/5fe92bd34655821592654e6f8ee8227b25ce9f52) |
-| 오늘 08:44 | [Market Memo](https://github.com/juhwan7/market-memo) | [시황: 2026-09-25 오늘의 핫이슈 3가지 추가](https://github.com/juhwan7/market-memo/commit/68c0ea66490ab15c15368ce9d19979f03ff7fe43) |
-| 오늘 06:55 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [ops: publish stock-autoresearch collector health](https://github.com/juhwan7/vibe-coding-playground/commit/f5ec22f67284c4bb20ca7bf4bb63ea395a501834) |
-| 오늘 06:55 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [ops: run stock-autoresearch Toss collector on Pi](https://github.com/juhwan7/vibe-coding-playground/commit/5dfe191e4befa5ba8db37f3ef9db6b0853b63943) |
-| 오늘 06:34 | [Market Memo](https://github.com/juhwan7/market-memo) | [Index 2026-09-25 morning briefing](https://github.com/juhwan7/market-memo/commit/1f49aa9b3ae7361c8cae70ecec38569da270310b) |
-| 오늘 06:34 | [Market Memo](https://github.com/juhwan7/market-memo) | [Update recent items for 2026-09-25 briefing](https://github.com/juhwan7/market-memo/commit/c7476c56e4388c2b8cf211159bb1c27b04f4b496) |
+| 어제 12:40 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [publish Toss six-minute batch for stock-autoresearch](https://github.com/juhwan7/vibe-coding-playground/commit/5fe92bd34655821592654e6f8ee8227b25ce9f52) |
+| 어제 08:44 | [Market Memo](https://github.com/juhwan7/market-memo) | [시황: 2026-09-25 오늘의 핫이슈 3가지 추가](https://github.com/juhwan7/market-memo/commit/68c0ea66490ab15c15368ce9d19979f03ff7fe43) |
+| 어제 06:55 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [ops: publish stock-autoresearch collector health](https://github.com/juhwan7/vibe-coding-playground/commit/f5ec22f67284c4bb20ca7bf4bb63ea395a501834) |
+| 어제 06:55 | [시장 대시보드](https://github.com/juhwan7/vibe-coding-playground) | [ops: run stock-autoresearch Toss collector on Pi](https://github.com/juhwan7/vibe-coding-playground/commit/5dfe191e4befa5ba8db37f3ef9db6b0853b63943) |
+| 어제 06:34 | [Market Memo](https://github.com/juhwan7/market-memo) | [Index 2026-09-25 morning briefing](https://github.com/juhwan7/market-memo/commit/1f49aa9b3ae7361c8cae70ecec38569da270310b) |
+| 어제 06:34 | [Market Memo](https://github.com/juhwan7/market-memo) | [Update recent items for 2026-09-25 briefing](https://github.com/juhwan7/market-memo/commit/c7476c56e4388c2b8cf211159bb1c27b04f4b496) |
 
 ## 최근 리서치
 
@@ -49,8 +49,8 @@
 
 | 업데이트 | 자료 |
 |---|---|
-| 오늘 06:34 | [2026 09 25 아침 증시 브리핑 — 미중 휴전 연장·유가 재급등·미 금리 부담](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-25-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
-| 어제 07:12 | [OpenAI — GPT 6 Astra 수요·접근성·컴퓨트 상태](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/) |
+| 어제 06:34 | [2026 09 25 아침 증시 브리핑 — 미중 휴전 연장·유가 재급등·미 금리 부담](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-25-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
+| 9월 24일 | [OpenAI — GPT 6 Astra 수요·접근성·컴퓨트 상태](https://juhwan7.github.io/market-memo/%EC%A2%85%EB%AA%A9%EB%B6%84%EC%84%9D/%EB%B9%84%EC%83%81%EC%9E%A5%EA%B8%B0%EC%97%85/OpenAI/) |
 | 9월 22일 | [2026 09 22 아침 증시 브리핑 — 미국 AI 반도체 랠리·유가 급락·미중 정상회담](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-22-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
 | 9월 21일 | [2026 09 21 삼성전자 상승 이유 — HBM4·메모리 업황 기대에 글로벌 반도체 반등과 수급 회복이 겹쳤다](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%ED%95%9C%EA%B5%AD%EC%A6%9D%EC%8B%9C/2026-09-21-%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-%EC%83%81%EC%8A%B9-%EC%9D%B4%EC%9C%A0/) |
 | 9월 19일 | [2026 09 18 아침 증시 브리핑](https://juhwan7.github.io/market-memo/%EC%8B%9C%ED%99%A9/%EA%B8%80%EB%A1%9C%EB%B2%8C/2026-09-18-%EC%95%84%EC%B9%A8-%EC%A6%9D%EC%8B%9C-%EB%B8%8C%EB%A6%AC%ED%95%91/) |
