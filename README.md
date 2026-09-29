@@ -4,6 +4,8 @@
 
 ### EVOLUTION DAY 001 — 이 프로필은 완성본이 아니라 계속 변하는 실험실입니다.
 
+<img src="https://img.shields.io/badge/24h%20mutations-314-F97316?style=flat-square" alt="24h mutations"> <img src="https://img.shields.io/badge/7d%20mutations-1651-111827?style=flat-square" alt="7d mutations"> <img src="https://img.shields.io/badge/active%20organisms-6%2F6-475467?style=flat-square" alt="active projects">
+
 시장 행동을 관찰하고, AI가 서로의 판단을 반증하게 만들고, 실패를 기록해 다음 시스템이 같은 실수를 반복하지 않게 만듭니다.
 
 </div>
@@ -13,23 +15,42 @@
 ## 오늘의 변이
 
 **오늘 전면에 나오는 프로젝트: [Stock AutoResearch](https://github.com/juhwan7/stock-autoresearch)**  
-10분 시장 감시, A/B 상호검증, 이슈 추적과 자동복구가 이어지는 자율 리서치 시스템  
+10분 시장 감시, A/B 상호검증, 이슈 추적과 자동복구가 이어지는 자율 리서치 시스템
 → [지금 보기](https://juhwan7.github.io/stock-autoresearch/)
 
 > 오늘의 질문: **오늘 가장 많이 바뀐 코드는 기능을 늘렸나, 판단을 더 정확하게 만들었나?**
 
-매일 KST 날짜가 바뀌면 전면 프로젝트·강조 색·프로젝트 궤도의 초점이 한 번 바뀝니다. 실제 저장소 활동은 별도로 약 3시간 간격으로 다시 읽습니다.
+매일 KST 날짜가 바뀌면 전면 프로젝트·강조 색·프로젝트 궤도의 초점이 한 번 바뀝니다. 실제 프로젝트 활동은 별도로 주기적으로 반영됩니다.
+
+## LAB PULSE
+
+| 24시간 변이 | 7일 변이 | 7일 내 살아있는 프로젝트 | 가장 최근에 움직인 프로젝트 |
+|---:|---:|---:|---|
+| **314** | **1651** | **6/6** | **Stock AutoResearch** |
 
 ## PROJECT ORGANISMS
 
-| 프로젝트 | 역할 | 무엇을 실험하는가 |
+| 프로젝트 | 생존 상태 | 최근 7일 | 역할 |
+|---|---|---:|---|
+| [Stock AutoResearch](https://juhwan7.github.io/stock-autoresearch/) · [repo](https://github.com/juhwan7/stock-autoresearch)<br><sub>10분 시장 감시, A/B 상호검증, 이슈 추적과 자동복구가 이어지는 자율 리서치 시스템</sub> | **HOT**<br><sub>4분 전</sub> | **1462** | MARKET AI |
+| [KMB Lab](https://github.com/juhwan7/korea-market-behavior-lab)<br><sub>5개의 AI가 매집·분배·수급 행동 가설을 서로 검증하고 실패 기록까지 공유하는 시장 행동 연구소</sub> | **HOT**<br><sub>26분 전</sub> | **116** | BEHAVIOR |
+| [Market Memo](https://juhwan7.github.io/market-memo/) · [repo](https://github.com/juhwan7/market-memo)<br><sub>시장 이슈와 기업·테마·정책을 구조화해 다음 판단으로 이어지게 만드는 개인 시장 기억 저장소</sub> | **ACTIVE**<br><sub>4일 전</sub> | **13** | MEMORY |
+| [STARSHIP](https://juhwan7.github.io/starship-launch-experience/) · [repo](https://github.com/juhwan7/starship-launch-experience)<br><sub>발사 준비부터 hot-staging까지 브라우저에서 재생하는 장편 실시간 WebGL 시네마틱 실험</sub> | **HOT**<br><sub>35분 전</sub> | **42** | 3D WEB |
+| [Rotation Talk](https://github.com/juhwan7/rotation-talk-roblox)<br><sub>40명이 짧은 주기로 만나고 회전하는 소셜 대화 게임을 시스템·경제·안전까지 함께 실험</sub> | **EVOLVING**<br><sub>2일 전</sub> | **5** | SOCIAL GAME |
+| [Evo 3D Game](https://github.com/juhwan7/evo-3d-game)<br><sub>여러 AI가 서로 작업을 감시하고 복구하며 장기적으로 스스로 확장하는 저사양 3D 게임 실험</sub> | **EVOLVING**<br><sub>1일 전</sub> | **13** | AUTONOMOUS |
+
+## LATEST MUTATIONS
+
+| 시각 | 프로젝트 | 실제 변경 |
 |---|---|---|
-| [Stock AutoResearch](https://juhwan7.github.io/stock-autoresearch/) | MARKET AI | 10분 시장 감시 · A/B 상호검증 · 자동복구 |
-| [KMB Lab](https://github.com/juhwan7/korea-market-behavior-lab) | BEHAVIOR | 5-AI 시장 행동·매집/분배 가설 검증 |
-| [Market Memo](https://juhwan7.github.io/market-memo/) | MEMORY | 시장 이슈·기업·테마를 장기 기억으로 축적 |
-| [STARSHIP](https://juhwan7.github.io/starship-launch-experience/) | 3D WEB | 브라우저에서 재생하는 장편 WebGL 발사 경험 |
-| [Rotation Talk](https://github.com/juhwan7/rotation-talk-roblox) | SOCIAL GAME | 40인 회전형 소셜 대화 게임 |
-| [Evo 3D Game](https://github.com/juhwan7/evo-3d-game) | AUTONOMOUS | 여러 AI가 서로 감시·복구하며 성장하는 3D 실험 |
+| 4분 전 | [Stock AutoResearch](https://github.com/juhwan7/stock-autoresearch) | [observe: record 10-minute supervisor checkpoint](https://github.com/juhwan7/stock-autoresearch/commit/f908c4cedd2efa0c8c7cb3b5b65111f0abe510cf) |
+| 13분 전 | [Stock AutoResearch](https://github.com/juhwan7/stock-autoresearch) | [recovery: refresh long-term memory](https://github.com/juhwan7/stock-autoresearch/commit/a65af5509f998e3881bd6d9de4711525c3fe6bfb) |
+| 26분 전 | [KMB Lab](https://github.com/juhwan7/korea-market-behavior-lab) | [AI-A: record mesh review and concentration follow-up](https://github.com/juhwan7/korea-market-behavior-lab/commit/6dc968fc0e48be134c5d4d9b0b9012d883f51c28) |
+| 35분 전 | [STARSHIP](https://github.com/juhwan7/starship-launch-experience) | [Fix fallback runtime indexing and add speed cycle](https://github.com/juhwan7/starship-launch-experience/commit/4de3288c496ed985de48990163e105b1124819de) |
+| 35분 전 | [STARSHIP](https://github.com/juhwan7/starship-launch-experience) | [Clamp startup progress and model loading ratio](https://github.com/juhwan7/starship-launch-experience/commit/8089783422b09a01a835329fe46c3d89d1a581c3) |
+| 3시간 전 | [KMB Lab](https://github.com/juhwan7/korea-market-behavior-lab) | [ops: enforce five-agent always-on recovery preflight](https://github.com/juhwan7/korea-market-behavior-lab/commit/9c203799be7736bfea98b8d6bbd73830b429ac81) |
+| 1일 전 | [Evo 3D Game](https://github.com/juhwan7/evo-3d-game) | [publish current autonomous development status](https://github.com/juhwan7/evo-3d-game/commit/ff5420af5b318e5e29f2ee663cbebbde2fc2255c) |
+| 1일 전 | [Evo 3D Game](https://github.com/juhwan7/evo-3d-game) | [auto-deploy experimental after static checks](https://github.com/juhwan7/evo-3d-game/commit/a70d6fb59e13715089ac64c0a772f95d9f4d487c) |
 
 ## PROJECT DNA
 
@@ -39,7 +60,7 @@ OBSERVE  →  HYPOTHESIS  →  BUILD  →  FALSIFY  →  RECOVER  →  ARCHIVE
    └────────────────────── next mutation ──────────────────────┘
 ~~~
 
-프로젝트를 한 번 만들고 끝내는 대신, 관찰 → 가설 → 구현 → 반증 → 복구 → 실패/결정 기록의 루프를 남깁니다. 저장소는 코드 보관함보다 다음 AI와 다음 실험이 이어받는 장기 기억에 가깝습니다.
+프로젝트를 한 번 만들고 끝내는 대신, 관찰 → 가설 → 구현 → 반증 → 복구 → 실패/결정 기록의 루프를 남깁니다. 그래서 저장소는 코드 보관함보다 다음 AI와 다음 실험이 이어받는 장기 기억에 가깝습니다.
 
 <details>
 <summary><b>TOOLS / MATERIALS</b></summary>
@@ -50,4 +71,6 @@ Python · Java · Spring Boot · JavaScript · Three.js · Roblox/Luau · GitHub
 
 ---
 
-<sub>Living Profile bootstrap · 실제 활동 데이터는 자동 생성기가 다음 실행에서 채웁니다.</sub>
+<sub>Living Profile · 2026-09-29 10:26 KST 생성 · 활동 변화는 약 3시간 간격, Daily Mutation은 하루 1회 전환</sub>
+
+<!-- generated by scripts/update_profile.py; edit profile.config.yml rather than generated sections -->
