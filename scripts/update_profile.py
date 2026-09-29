@@ -6,9 +6,8 @@ import os
 import re
 import urllib.parse
 import urllib.request
-from collections import defaultdict
 from dataclasses import dataclass
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -17,6 +16,8 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "profile.config.yml"
 README_PATH = ROOT / "README.md"
+ASSET_DIR = ROOT / "assets"
+ORBIT_PATH = ASSET_DIR / "lab-orbit.svg"
 
 
 @dataclass
@@ -27,459 +28,380 @@ class Activity:
     happened_at: datetime
 
 
-@dataclass
-class DocumentUpdate:
-    title: str
-    path: str
-    url: str
-    happened_at: datetime
-
-
 def load_config() -> dict:
     return yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8"))
 
 
-def request(url: str, token: str | None = None) -> bytes:
+def request_json(url: str, token: str | None = None):
     headers = {
         "Accept": "application/vnd.github+json",
-        "User-Agent": "juhwan7-profile-dashboard",
+        "User-Agent": "juhwan7-living-profile",
+        "X-GitHub-Api-Version": "2022-11-28",
     }
     if token:
         headers["Authorization"] = f"Bearer {token}"
     req = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(req, timeout=20) as response:
-        return response.read()
-
-
-def api_json(url: str, token: str | None = None):
-    return json.loads(request(url, token).decode("utf-8"))
-
-
-def clean_message(message: str) -> str:
-    first_line = message.splitlines()[0].strip()
-    first_line = re.sub(
-        r"^(feat|fix|docs|refactor|chore|style|perf|test|build|ci)(\([^)]*\))?:\s*",
-        "",
-        first_line,
-        flags=re.IGNORECASE,
-    )
-    return first_line.strip()
-
-
-def should_ignore(message: str, patterns: list[str]) -> bool:
-    lowered = message.lower()
-    return any(str(pattern).lower() in lowered for pattern in patterns)
+        return json.loads(response.read().decode("utf-8"))
 
 
 def parse_datetime(value: str) -> datetime:
     return datetime.fromisoformat(value.replace("Z", "+00:00"))
 
 
-def fetch_repo_activities(
-    owner: str,
-    repo: str,
-    token: str | None,
-    since: datetime,
-    ignore_patterns: list[str],
-) -> list[Activity]:
+def clean_message(message: str) -> str:
+    line = message.splitlines()[0].strip()
+    line = re.sub(
+        r"^(feat|fix|docs|refactor|chore|style|perf|test|build|ci)(\([^)]*\))?:\s*",
+        "",
+        line,
+        flags=re.IGNORECASE,
+    )
+    return line.strip()
+
+
+def fetch_repo_activity(owner: str, repo: str, since: datetime, token: str | None) -> list[Activity]:
     since_param = urllib.parse.quote(since.astimezone(timezone.utc).isoformat())
-    url = f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=100&since={since_param}"
-    commits = api_json(url, token)
-    activities: list[Activity] = []
-
-    for item in commits:
-        author_login = (item.get("author") or {}).get("login")
-        author_name = ((item.get("commit") or {}).get("author") or {}).get("name", "")
-        if author_login and author_login != owner:
-            continue
-        if not author_login and owner.lower() not in author_name.lower():
-            continue
-
-        commit = item.get("commit") or {}
-        raw_message = commit.get("message", "")
-        message = clean_message(raw_message)
-        if not message or should_ignore(message, ignore_patterns):
-            continue
-
-        date_value = (commit.get("author") or {}).get("date")
-        if not date_value:
-            continue
-
-        activities.append(
-            Activity(
-                repo=repo,
-                message=message,
-                url=item.get("html_url", f"https://github.com/{owner}/{repo}"),
-                happened_at=parse_datetime(date_value),
-            )
+    result: list[Activity] = []
+    page = 1
+    while page <= 20:
+        url = (
+            f"https://api.github.com/repos/{owner}/{repo}/commits"
+            f"?per_page=100&page={page}&since={since_param}"
         )
+        items = request_json(url, token)
+        if not items:
+            break
 
-    return activities
+        for item in items:
+            commit = item.get("commit") or {}
+            raw_message = commit.get("message", "")
+            message = clean_message(raw_message)
+            date_value = (
+                (commit.get("committer") or {}).get("date")
+                or (commit.get("author") or {}).get("date")
+            )
+            if not message or not date_value:
+                continue
+            result.append(
+                Activity(
+                    repo=repo,
+                    message=message,
+                    url=item.get("html_url", f"https://github.com/{owner}/{repo}"),
+                    happened_at=parse_datetime(date_value),
+                )
+            )
+
+        if len(items) < 100:
+            break
+        page += 1
+    return result
 
 
-def dedupe_activities(activities: list[Activity]) -> list[Activity]:
-    latest_by_key: dict[tuple[str, str], Activity] = {}
-    for activity in activities:
-        key = (activity.repo, activity.message)
-        current = latest_by_key.get(key)
-        if current is None or activity.happened_at > current.happened_at:
-            latest_by_key[key] = activity
-    return list(latest_by_key.values())
-
-
-def relative_time(value: datetime, tz: ZoneInfo) -> str:
+def relative_time(value: datetime, tz: ZoneInfo, now: datetime) -> str:
     local = value.astimezone(tz)
-    now = datetime.now(tz)
-    if local.date() == now.date():
-        return f"오늘 {local:%H:%M}"
-    if local.date() == (now - timedelta(days=1)).date():
-        return f"어제 {local:%H:%M}"
-    return f"{local.month}월 {local.day}일"
+    delta = now - local
+    if delta < timedelta(hours=1):
+        minutes = max(1, int(delta.total_seconds() // 60))
+        return f"{minutes}분 전"
+    if delta < timedelta(days=1):
+        return f"{int(delta.total_seconds() // 3600)}시간 전"
+    if delta < timedelta(days=7):
+        return f"{delta.days}일 전"
+    return f"{local:%m-%d}"
 
 
-def github_blob_url(owner: str, repo: str, path: str) -> str:
-    encoded = urllib.parse.quote(path, safe="/")
-    return f"https://github.com/{owner}/{repo}/blob/main/{encoded}"
+def stage_for(latest: datetime | None, now_utc: datetime) -> tuple[str, str]:
+    if latest is None:
+        return "SLEEP", "최근 활동 없음"
+    age = now_utc - latest
+    if age <= timedelta(days=1):
+        return "HOT", "24시간 내 변화"
+    if age <= timedelta(days=3):
+        return "EVOLVING", "3일 내 변화"
+    if age <= timedelta(days=7):
+        return "ACTIVE", "7일 내 변화"
+    return "HIBERNATE", "다음 변이 대기"
 
 
-def site_document_url(base_url: str, path: str) -> str:
-    normalized = path.lstrip("./")
-    if normalized.endswith("README.md"):
-        normalized = normalized[: -len("README.md")]
-    elif normalized.endswith(".md"):
-        normalized = normalized[:-3] + "/"
-    encoded = urllib.parse.quote(normalized, safe="/")
-    return base_url.rstrip("/") + "/" + encoded.lstrip("/")
+def project_stats(config: dict, activities: list[Activity], now_utc: datetime) -> list[dict]:
+    by_repo: dict[str, list[Activity]] = {}
+    for activity in activities:
+        by_repo.setdefault(activity.repo, []).append(activity)
 
-
-def interest_title(title: str, path: str) -> str:
-    raw = title.strip().strip("`")
-    if "/" in raw or raw.endswith(".md"):
-        raw = Path(path).stem
-    raw = raw.replace("-", " ")
-    raw = re.sub(r"\s+", " ", raw).strip()
-    return raw
-
-
-def fetch_source_links(config: dict) -> list[tuple[str, str]]:
-    owner = config["owner"]
-    interest_cfg = config["interests"]
-    repo = interest_cfg["source_repo"]
-    source_file = interest_cfg["source_file"]
-    encoded = urllib.parse.quote(source_file, safe="/")
-    raw_url = f"https://raw.githubusercontent.com/{owner}/{repo}/main/{encoded}"
-    text = request(raw_url).decode("utf-8")
-
-    include_paths = interest_cfg.get("include_paths", [])
-    exclude_paths = interest_cfg.get("exclude_paths", [])
-
-    results: list[tuple[str, str]] = []
-    seen_paths: set[str] = set()
-    for title, path in re.findall(r"\[([^\]]+)\]\(([^)]+)\)", text):
-        normalized = path.lstrip("./")
-        if not any(normalized.startswith(prefix) for prefix in include_paths):
-            continue
-        if any(normalized.startswith(prefix) for prefix in exclude_paths):
-            continue
-        if normalized.endswith("README.md"):
-            continue
-        if normalized in seen_paths:
-            continue
-        seen_paths.add(normalized)
-        results.append((interest_title(title, normalized), normalized))
-
-    return results
-
-
-def source_document_url(config: dict, path: str) -> str:
-    owner = config["owner"]
-    cfg = config["interests"]
-    repo = cfg["source_repo"]
-    site_url = cfg.get("site_url")
-    if site_url:
-        return site_document_url(site_url, path)
-    return github_blob_url(owner, repo, path)
-
-
-def fetch_interests(config: dict) -> list[tuple[str, str]]:
-    limit = int(config["interests"].get("limit", 5))
-    results: list[tuple[str, str]] = []
-    seen_titles: set[str] = set()
-
-    for display, normalized in fetch_source_links(config):
-        if not display or display in seen_titles:
-            continue
-        seen_titles.add(display)
-        results.append((display, source_document_url(config, normalized)))
-        if len(results) >= limit:
-            break
-    return results
-
-
-def fetch_recent_documents(config: dict, token: str | None) -> list[DocumentUpdate]:
-    owner = config["owner"]
-    cfg = config["interests"]
-    repo = cfg["source_repo"]
-    limit = int(cfg.get("recent_documents_limit", cfg.get("limit", 5)))
-    updates: list[DocumentUpdate] = []
-
-    for title, path in fetch_source_links(config):
-        encoded_path = urllib.parse.quote(path, safe="")
-        api_url = f"https://api.github.com/repos/{owner}/{repo}/commits?path={encoded_path}&per_page=1"
-        commits = api_json(api_url, token)
-        if not commits:
-            continue
-        commit = commits[0]
-        commit_data = commit.get("commit") or {}
-        date_value = (
-            (commit_data.get("committer") or {}).get("date")
-            or (commit_data.get("author") or {}).get("date")
+    stats: list[dict] = []
+    for project in config["projects"]:
+        items = sorted(by_repo.get(project["repo"], []), key=lambda a: a.happened_at, reverse=True)
+        latest = items[0].happened_at if items else None
+        count_24h = sum(a.happened_at >= now_utc - timedelta(days=1) for a in items)
+        count_7d = sum(a.happened_at >= now_utc - timedelta(days=7) for a in items)
+        stage, stage_note = stage_for(latest, now_utc)
+        stats.append(
+            {
+                **project,
+                "latest": latest,
+                "count_24h": count_24h,
+                "count_7d": count_7d,
+                "stage": stage,
+                "stage_note": stage_note,
+            }
         )
-        if not date_value:
-            continue
-        updates.append(
-            DocumentUpdate(
-                title=title,
-                path=path,
-                url=source_document_url(config, path),
-                happened_at=parse_datetime(date_value),
-            )
+    return stats
+
+
+def safe_text(value: str) -> str:
+    return html.escape(str(value), quote=True)
+
+
+def render_orbit(
+    owner: str,
+    stats: list[dict],
+    featured_repo: str,
+    evolution_day: int,
+    accent: str,
+    accent2: str,
+    generated_at: datetime,
+) -> str:
+    width, height = 1200, 470
+    center_x, center_y = 600, 235
+    positions = [
+        (165, 112),
+        (600, 78),
+        (1035, 112),
+        (1035, 358),
+        (600, 392),
+        (165, 358),
+    ]
+
+    nodes: list[str] = []
+    for index, project in enumerate(stats):
+        x, y = positions[index % len(positions)]
+        featured = project["repo"] == featured_repo
+        radius = 30 + min(int(project["count_7d"]), 12) * 1.2 + (9 if featured else 0)
+        stroke = accent if featured else "#aab0bc"
+        fill = "#fff7ed" if featured else "#ffffff"
+        dash = "" if featured else ' stroke-dasharray="5 7"'
+        title = safe_text(project["title"])
+        lane = safe_text(project.get("lane", "LAB"))
+        count = int(project["count_7d"])
+        nodes.append(
+            f'<line x1="{center_x}" y1="{center_y}" x2="{x}" y2="{y}" '
+            f'stroke="#d7dbe3" stroke-width="2" stroke-dasharray="4 8" class="drift"/>'
         )
-
-    updates.sort(key=lambda item: item.happened_at, reverse=True)
-    return updates[:limit]
-
-
-def select_recent_activities(
-    activities: list[Activity], limit: int, max_per_repo: int
-) -> list[Activity]:
-    selected: list[Activity] = []
-    repo_counts: defaultdict[str, int] = defaultdict(int)
-    for activity in sorted(activities, key=lambda a: a.happened_at, reverse=True):
-        if repo_counts[activity.repo] >= max_per_repo:
-            continue
-        selected.append(activity)
-        repo_counts[activity.repo] += 1
-        if len(selected) >= limit:
-            break
-    return selected
-
-
-def markdown_cell(value: str) -> str:
-    return value.replace("|", "\\|").replace("\n", " ").strip()
-
-
-def project_cards(
-    config: dict, activities: list[Activity], now_days: int
-) -> list[str]:
-    owner = config["owner"]
-    rows: list[str] = ["<table>", "<tr>"]
-
-    for item in config["tracked_repositories"][:2]:
-        repo = item["repo"]
-        repo_activities = [a for a in activities if a.repo == repo]
-        cutoff = datetime.now(timezone.utc) - timedelta(days=now_days)
-        recent = [a for a in repo_activities if a.happened_at >= cutoff]
-        latest = max(repo_activities, key=lambda a: a.happened_at, default=None)
-
-        title = html.escape(str(item["title"]))
-        description = html.escape(str(item["description"]))
-        repo_url = html.escape(str(item.get("url", f"https://github.com/{owner}/{repo}")), quote=True)
-        live_url = item.get("live_url")
-        live_label = html.escape(str(item.get("live_label", "Live")))
-
-        links = []
-        if live_url:
-            links.append(
-                f'<a href="{html.escape(str(live_url), quote=True)}"><b>{live_label} ↗</b></a>'
+        if featured:
+            nodes.append(
+                f'<circle cx="{x}" cy="{y}" r="{radius + 10:.1f}" fill="none" '
+                f'stroke="{accent2}" stroke-width="2" opacity=".35" class="pulse"/>'
             )
-        links.append(f'<a href="{repo_url}">GitHub</a>')
-
-        latest_line = f"최근 {now_days}일 주요 작업 {len(recent)}개"
-        if latest:
-            latest_line += (
-                " · 최근: "
-                f'<a href="{html.escape(latest.url, quote=True)}">'
-                f"{html.escape(latest.message)}</a>"
-            )
-
-        rows.extend(
+        nodes.extend(
             [
-                '<td width="50%" valign="top">',
-                f"<h3>{title}</h3>",
-                f"<p>{description}</p>",
-                f"<p>{' · '.join(links)}</p>",
-                f"<sub>{latest_line}</sub>",
-                "</td>",
+                f'<circle cx="{x}" cy="{y}" r="{radius:.1f}" fill="{fill}" stroke="{stroke}" '
+                f'stroke-width="{4 if featured else 2}"{dash}/>',
+                f'<text x="{x}" y="{y - 5}" text-anchor="middle" class="nodeTitle">{title}</text>',
+                f'<text x="{x}" y="{y + 17}" text-anchor="middle" class="nodeMeta">{lane} · {count} mutations/7d</text>',
             ]
         )
 
-    rows.extend(["</tr>", "</table>"])
-    return rows
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fafaf7"/>
+      <stop offset="100%" stop-color="#f0f3f7"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#111827" flood-opacity=".10"/>
+    </filter>
+    <style>
+      .title {{ font: 700 29px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #111827; letter-spacing: 1px; }}
+      .meta {{ font: 500 15px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #667085; }}
+      .nodeTitle {{ font: 700 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }}
+      .nodeMeta {{ font: 500 10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #667085; }}
+      .pulse {{ transform-box: fill-box; transform-origin: center; animation: pulse 2.8s ease-in-out infinite; }}
+      .drift {{ animation: dash 12s linear infinite; }}
+      @keyframes pulse {{ 0%,100% {{ opacity:.18; transform:scale(.92); }} 50% {{ opacity:.58; transform:scale(1.08); }} }}
+      @keyframes dash {{ to {{ stroke-dashoffset:-120; }} }}
+      @media (prefers-reduced-motion: reduce) {{ .pulse,.drift {{ animation:none; }} }}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="{width}" height="{height}" rx="28" fill="url(#bg)"/>
+  <circle cx="{center_x}" cy="{center_y}" r="115" fill="#ffffff" stroke="{accent}" stroke-width="5" filter="url(#shadow)"/>
+  <circle cx="{center_x}" cy="{center_y}" r="128" fill="none" stroke="{accent2}" stroke-width="2" opacity=".28" class="pulse"/>
+  <text x="{center_x}" y="{center_y - 18}" text-anchor="middle" class="title">JUHWAN / LIVING LAB</text>
+  <text x="{center_x}" y="{center_y + 12}" text-anchor="middle" class="meta">EVOLUTION DAY {evolution_day:03d}</text>
+  <text x="{center_x}" y="{center_y + 39}" text-anchor="middle" class="meta">observe → build → falsify → recover → evolve</text>
+  {''.join(nodes)}
+  <text x="35" y="440" class="meta">generated {generated_at:%Y-%m-%d %H:%M} KST · github.com/{owner}</text>
+</svg>
+'''
 
 
-def render(
+def render_readme(
     config: dict,
+    stats: list[dict],
     activities: list[Activity],
-    interests: list[tuple[str, str]],
-    recent_documents: list[DocumentUpdate],
+    now: datetime,
+    evolution_day: int,
+    featured: dict,
+    question: str,
+    accent: str,
 ) -> str:
     owner = config["owner"]
-    tz = ZoneInfo(config.get("timezone", "Asia/Seoul"))
-    profile_cfg = config.get("profile", {})
-    tagline = profile_cfg.get(
-        "tagline", "시장을 읽고, 기록하고, 필요한 도구를 직접 만듭니다."
-    )
-    subtitle = profile_cfg.get(
-        "subtitle", "주식시장 리서치 · 데이터 대시보드 · 자동화 · 바이브코딩"
-    )
+    date_key = now.strftime("%Y%m%d")
+    commits_24h = sum(p["count_24h"] for p in stats)
+    commits_7d = sum(p["count_7d"] for p in stats)
+    active_7d = sum(p["count_7d"] > 0 for p in stats)
+    freshest = max((p for p in stats if p["latest"]), key=lambda p: p["latest"], default=None)
 
-    now_cfg = config.get("now", {})
-    now_days = int(now_cfg.get("lookback_days", 7))
+    recent = sorted(activities, key=lambda a: a.happened_at, reverse=True)
+    selected: list[Activity] = []
+    per_repo: dict[str, int] = {}
+    limit = int(config.get("refresh", {}).get("recent_limit", 8))
+    max_per_repo = int(config.get("refresh", {}).get("recent_max_per_repo", 2))
+    for item in recent:
+        if per_repo.get(item.repo, 0) >= max_per_repo:
+            continue
+        selected.append(item)
+        per_repo[item.repo] = per_repo.get(item.repo, 0) + 1
+        if len(selected) >= limit:
+            break
 
-    recent_cfg = config.get("recent_activity", {})
-    activity_limit = int(recent_cfg.get("limit", 6))
-    max_per_repo = int(recent_cfg.get("max_per_repo", activity_limit))
-    latest_activities = select_recent_activities(activities, activity_limit, max_per_repo)
-
-    market_memo = next(
-        (item for item in config["tracked_repositories"] if item["repo"] == "market-memo"),
-        {},
-    )
-    market_memo_live = market_memo.get(
-        "live_url", "https://juhwan7.github.io/market-memo/"
-    )
-
-    lines: list[str] = []
-    lines.extend(
-        [
-            '<div align="center">',
-            "",
-            "# Juhwan",
-            "",
-            f"### {tagline}",
-            "",
-            f"{subtitle}",
-            "",
-            f'<a href="{market_memo_live}"><img src="https://img.shields.io/badge/Market%20Memo-LIVE-111827?style=for-the-badge&logo=githubpages&logoColor=white" alt="Market Memo"></a>',
-            f'<a href="https://github.com/{owner}/vibe-coding-playground"><img src="https://img.shields.io/badge/Market%20Dashboard-GitHub-24292F?style=for-the-badge&logo=github&logoColor=white" alt="Market Dashboard"></a>',
-            "",
-            "</div>",
-            "",
-            "---",
-            "",
-            "## 지금 만드는 것",
-            "",
-        ]
-    )
-
-    lines.extend(project_cards(config, activities, now_days))
-    lines.extend(["", "## 최근 흐름", ""])
-
-    if latest_activities:
-        lines.append("| 시각 | 프로젝트 | 작업 |")
-        lines.append("|---|---|---|")
-        repo_titles = {
-            item["repo"]: item["title"] for item in config["tracked_repositories"]
-        }
-        for activity in latest_activities:
-            repo_url = f"https://github.com/{owner}/{activity.repo}"
-            repo_title = repo_titles.get(activity.repo, activity.repo)
-            lines.append(
-                f"| {relative_time(activity.happened_at, tz)} | "
-                f"[{markdown_cell(str(repo_title))}]({repo_url}) | "
-                f"[{markdown_cell(activity.message)}]({activity.url}) |"
-            )
-    else:
-        lines.append("최근 표시할 주요 작업이 없습니다.")
-
-    lines.extend(["", "## 최근 리서치", ""])
-    lines.append(
-        f"> 전체 자료는 **[Market Memo 웹사이트]({market_memo_live})**에서 검색하고 읽을 수 있습니다."
-    )
-    lines.append("")
-
-    if recent_documents:
-        lines.append("| 업데이트 | 자료 |")
-        lines.append("|---|---|")
-        for document in recent_documents:
-            lines.append(
-                f"| {relative_time(document.happened_at, tz)} | "
-                f"[{markdown_cell(document.title)}]({document.url}) |"
-            )
-    else:
-        lines.append("최근 업데이트된 자료가 없습니다.")
-
-    lines.extend(["", "## 요즘 보는 것", ""])
-    if interests:
-        lines.append(" · ".join(f"[{title}]({url})" for title, url in interests))
-    else:
-        lines.append("아직 표시할 관심 주제가 없습니다.")
-
+    titles = {p["repo"]: p["title"] for p in stats}
+    lines: list[str] = [
+        '<div align="center">',
+        "",
+        f'<img src="https://raw.githubusercontent.com/{owner}/{owner}/main/assets/lab-orbit.svg?v={date_key}" alt="Juhwan Living Lab project constellation" width="100%">',
+        "",
+        f"### EVOLUTION DAY {evolution_day:03d} — 이 프로필은 완성본이 아니라 계속 변하는 실험실입니다.",
+        "",
+        f'<img src="https://img.shields.io/badge/24h%20mutations-{commits_24h}-{accent.lstrip("#")}?style=flat-square" alt="24h mutations"> '
+        f'<img src="https://img.shields.io/badge/7d%20mutations-{commits_7d}-111827?style=flat-square" alt="7d mutations"> '
+        f'<img src="https://img.shields.io/badge/active%20organisms-{active_7d}%2F{len(stats)}-475467?style=flat-square" alt="active projects">',
+        "",
+        "시장 행동을 관찰하고, AI가 서로의 판단을 반증하게 만들고, 실패를 기록해 다음 시스템이 같은 실수를 반복하지 않게 만듭니다.",
+        "",
+        "</div>",
+        "",
+        "---",
+        "",
+        "## 오늘의 변이",
+        "",
+        f"**오늘 전면에 나오는 프로젝트: [{featured['title']}](https://github.com/{owner}/{featured['repo']})**  ",
+        f"{featured['description']}",
+    ]
+    if featured.get("live_url"):
+        lines.append(f"→ [지금 보기]({featured['live_url']})")
     lines.extend(
         [
             "",
-            "## 사용하는 도구",
+            f"> 오늘의 질문: **{question}**",
             "",
-            '<p align="left">',
-            '<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"> ',
-            '<img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java"> ',
-            '<img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot"> ',
-            '<img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Actions"> ',
-            '<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"> ',
-            '<img src="https://img.shields.io/badge/Raspberry%20Pi-A22846?style=flat-square&logo=raspberrypi&logoColor=white" alt="Raspberry Pi"> ',
-            '<img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white" alt="AWS">',
-            "</p>",
+            "매일 KST 날짜가 바뀌면 전면 프로젝트·강조 색·프로젝트 궤도의 초점이 한 번 바뀝니다. 실제 프로젝트 활동은 별도로 주기적으로 반영됩니다.",
             "",
-            "## 만드는 방식",
+            "## LAB PULSE",
             "",
-            "- **필요하면 직접 만듭니다.** 반복해서 확인하는 정보는 대시보드나 자동화로 바꿉니다.",
-            "- **기록은 다음 판단을 위한 데이터로 남깁니다.** 뉴스 한 줄보다 배경·원인·다음 단계를 연결합니다.",
-            "- **작게 만들고 계속 개선합니다.** 실제로 써보고 불편한 부분부터 고칩니다.",
+            "| 24시간 변이 | 7일 변이 | 7일 내 살아있는 프로젝트 | 가장 최근에 움직인 프로젝트 |",
+            "|---:|---:|---:|---|",
+            f"| **{commits_24h}** | **{commits_7d}** | **{active_7d}/{len(stats)}** | **{freshest['title'] if freshest else '—'}** |",
             "",
-            "---",
+            "## PROJECT ORGANISMS",
             "",
+            "| 프로젝트 | 생존 상태 | 최근 7일 | 역할 |",
+            "|---|---|---:|---|",
         ]
     )
 
-    if latest_activities:
-        latest_source_time = max(a.happened_at for a in latest_activities).astimezone(tz)
+    for project in stats:
+        repo_url = f"https://github.com/{owner}/{project['repo']}"
+        title = project["title"]
+        if project.get("live_url"):
+            title_cell = f"[{title}]({project['live_url']}) · [repo]({repo_url})"
+        else:
+            title_cell = f"[{title}]({repo_url})"
+        stage = project["stage"]
+        latest = relative_time(project["latest"], ZoneInfo(config["timezone"]), now) if project["latest"] else "—"
         lines.append(
-            f"<sub>최근 활동 데이터 기준: {latest_source_time:%Y-%m-%d %H:%M} KST · "
-            "GitHub Actions가 주기적으로 자동 갱신합니다.</sub>"
+            f"| {title_cell}<br><sub>{project['description']}</sub> | **{stage}**<br><sub>{latest}</sub> | "
+            f"**{project['count_7d']}** | {project.get('lane', 'LAB')} |"
         )
-        lines.append("")
 
-    lines.append("<!-- 이 README는 GitHub Actions가 실제 데이터가 바뀔 때만 자동 갱신합니다. -->")
+    lines.extend(["", "## LATEST MUTATIONS", ""])
+    if selected:
+        lines.extend(["| 시각 | 프로젝트 | 실제 변경 |", "|---|---|---|"])
+        tz = ZoneInfo(config["timezone"])
+        for item in selected:
+            title = titles.get(item.repo, item.repo)
+            lines.append(
+                f"| {relative_time(item.happened_at, tz, now)} | [{title}](https://github.com/{owner}/{item.repo}) | "
+                f"[{item.message.replace('|', '¦')}]({item.url}) |"
+            )
+    else:
+        lines.append("최근 표시할 커밋이 없습니다.")
+
+    lines.extend(
+        [
+            "",
+            "## PROJECT DNA",
+            "",
+            "~~~text",
+            "OBSERVE  →  HYPOTHESIS  →  BUILD  →  FALSIFY  →  RECOVER  →  ARCHIVE",
+            "   ↑                                                           ↓",
+            "   └────────────────────── next mutation ──────────────────────┘",
+            "~~~",
+            "",
+            "프로젝트를 한 번 만들고 끝내는 대신, 관찰 → 가설 → 구현 → 반증 → 복구 → 실패/결정 기록의 루프를 남깁니다. "
+            "그래서 저장소는 코드 보관함보다 다음 AI와 다음 실험이 이어받는 장기 기억에 가깝습니다.",
+            "",
+            "<details>",
+            "<summary><b>TOOLS / MATERIALS</b></summary>",
+            "",
+            "Python · Java · Spring Boot · JavaScript · Three.js · Roblox/Luau · GitHub Actions · Docker · Raspberry Pi · AWS",
+            "",
+            "</details>",
+            "",
+            "---",
+            "",
+            f"<sub>Living Profile · {now:%Y-%m-%d %H:%M} KST 생성 · 활동 변화는 약 3시간 간격, Daily Mutation은 하루 1회 전환</sub>",
+            "",
+            "<!-- generated by scripts/update_profile.py; edit profile.config.yml rather than generated sections -->",
+        ]
+    )
     return "\n".join(lines).rstrip() + "\n"
 
 
 def main() -> None:
     config = load_config()
     owner = config["owner"]
+    tz = ZoneInfo(config.get("timezone", "Asia/Seoul"))
+    now = datetime.now(tz)
+    now_utc = now.astimezone(timezone.utc)
     token = os.getenv("GITHUB_TOKEN")
-    recent_cfg = config.get("recent_activity", {})
-    lookback_days = int(recent_cfg.get("lookback_days", 14))
-    ignore_patterns = recent_cfg.get("ignore_messages", [])
-    since = datetime.now(timezone.utc) - timedelta(days=lookback_days)
+
+    lookback_days = int(config.get("refresh", {}).get("lookback_days", 14))
+    since = now_utc - timedelta(days=lookback_days)
 
     activities: list[Activity] = []
-    for item in config["tracked_repositories"]:
-        activities.extend(
-            fetch_repo_activities(
-                owner=owner,
-                repo=item["repo"],
-                token=token,
-                since=since,
-                ignore_patterns=ignore_patterns,
-            )
-        )
+    for project in config["projects"]:
+        activities.extend(fetch_repo_activity(owner, project["repo"], since, token))
 
-    activities = dedupe_activities(activities)
-    interests = fetch_interests(config)
-    recent_documents = fetch_recent_documents(config, token)
-    content = render(config, activities, interests, recent_documents)
-    README_PATH.write_text(content, encoding="utf-8")
+    stats = project_stats(config, activities, now_utc)
+    seed = date.fromisoformat(config["seed_date"])
+    evolution_day = max(1, (now.date() - seed).days + 1)
+    featured = stats[(evolution_day - 1) % len(stats)]
+    questions = config["daily_questions"]
+    question = questions[(evolution_day - 1) % len(questions)]
+    palettes = config["daily_palettes"]
+    palette = palettes[(evolution_day - 1) % len(palettes)]
+    accent, accent2 = palette["accent"], palette["accent2"]
+
+    ASSET_DIR.mkdir(parents=True, exist_ok=True)
+    ORBIT_PATH.write_text(
+        render_orbit(owner, stats, featured["repo"], evolution_day, accent, accent2, now),
+        encoding="utf-8",
+    )
+    README_PATH.write_text(
+        render_readme(config, stats, activities, now, evolution_day, featured, question, accent),
+        encoding="utf-8",
+    )
 
 
 if __name__ == "__main__":
