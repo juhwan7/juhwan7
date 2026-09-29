@@ -384,7 +384,8 @@ def main() -> None:
         activities.extend(fetch_repo_activity(owner, project["repo"], since, token))
 
     stats = project_stats(config, activities, now_utc)
-    seed = date.fromisoformat(config["seed_date"])
+    seed_value = config["seed_date"]
+    seed = seed_value if isinstance(seed_value, date) else date.fromisoformat(str(seed_value))
     evolution_day = max(1, (now.date() - seed).days + 1)
     featured = stats[(evolution_day - 1) % len(stats)]
     questions = config["daily_questions"]
