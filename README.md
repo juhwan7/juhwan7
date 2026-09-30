@@ -4,7 +4,7 @@
 
 ### EVOLUTION DAY 002 — 이 프로필은 완성본이 아니라 계속 변하는 실험실입니다.
 
-<img src="https://img.shields.io/badge/24h%20mutations-237-0EA5E9?style=flat-square" alt="24h mutations"> <img src="https://img.shields.io/badge/7d%20mutations-1822-111827?style=flat-square" alt="7d mutations"> <img src="https://img.shields.io/badge/active%20organisms-6%2F6-475467?style=flat-square" alt="active projects">
+<img src="https://img.shields.io/badge/24h%20mutations-291-0EA5E9?style=flat-square" alt="24h mutations"> <img src="https://img.shields.io/badge/7d%20mutations-1979-111827?style=flat-square" alt="7d mutations"> <img src="https://img.shields.io/badge/active%20organisms-6%2F6-475467?style=flat-square" alt="active projects">
 
 시장 행동을 관찰하고, AI가 서로의 판단을 반증하게 만들고, 실패를 기록해 다음 시스템이 같은 실수를 반복하지 않게 만듭니다.
 
@@ -25,16 +25,16 @@
 
 | 24시간 변이 | 7일 변이 | 7일 내 살아있는 프로젝트 | 가장 최근에 움직인 프로젝트 |
 |---:|---:|---:|---|
-| **237** | **1822** | **6/6** | **Stock AutoResearch** |
+| **291** | **1979** | **6/6** | **Stock AutoResearch** |
 
 ## PROJECT ORGANISMS
 
 | 프로젝트 | 생존 상태 | 최근 7일 | 역할 |
 |---|---|---:|---|
-| [Stock AutoResearch](https://juhwan7.github.io/stock-autoresearch/) · [repo](https://github.com/juhwan7/stock-autoresearch)<br><sub>10분 시장 감시, A/B 상호검증, 이슈 추적과 자동복구가 이어지는 자율 리서치 시스템</sub> | **HOT**<br><sub>8분 전</sub> | **1569** | MARKET AI |
-| [KMB Lab](https://github.com/juhwan7/korea-market-behavior-lab)<br><sub>5개의 AI가 매집·분배·수급 행동 가설을 서로 검증하고 실패 기록까지 공유하는 시장 행동 연구소</sub> | **HOT**<br><sub>8분 전</sub> | **182** | BEHAVIOR |
-| [Market Memo](https://juhwan7.github.io/market-memo/) · [repo](https://github.com/juhwan7/market-memo)<br><sub>시장 이슈와 기업·테마·정책을 구조화해 다음 판단으로 이어지게 만드는 개인 시장 기억 저장소</sub> | **ACTIVE**<br><sub>4일 전</sub> | **11** | MEMORY |
-| [STARSHIP](https://juhwan7.github.io/starship-launch-experience/) · [repo](https://github.com/juhwan7/starship-launch-experience)<br><sub>발사 준비부터 hot-staging까지 브라우저에서 재생하는 장편 실시간 WebGL 시네마틱 실험</sub> | **HOT**<br><sub>21시간 전</sub> | **42** | 3D WEB |
+| [Stock AutoResearch](https://juhwan7.github.io/stock-autoresearch/) · [repo](https://github.com/juhwan7/stock-autoresearch)<br><sub>10분 시장 감시, A/B 상호검증, 이슈 추적과 자동복구가 이어지는 자율 리서치 시스템</sub> | **HOT**<br><sub>5분 전</sub> | **1617** | MARKET AI |
+| [KMB Lab](https://github.com/juhwan7/korea-market-behavior-lab)<br><sub>5개의 AI가 매집·분배·수급 행동 가설을 서로 검증하고 실패 기록까지 공유하는 시장 행동 연구소</sub> | **HOT**<br><sub>27분 전</sub> | **291** | BEHAVIOR |
+| [Market Memo](https://juhwan7.github.io/market-memo/) · [repo](https://github.com/juhwan7/market-memo)<br><sub>시장 이슈와 기업·테마·정책을 구조화해 다음 판단으로 이어지게 만드는 개인 시장 기억 저장소</sub> | **ACTIVE**<br><sub>5일 전</sub> | **11** | MEMORY |
+| [STARSHIP](https://juhwan7.github.io/starship-launch-experience/) · [repo](https://github.com/juhwan7/starship-launch-experience)<br><sub>발사 준비부터 hot-staging까지 브라우저에서 재생하는 장편 실시간 WebGL 시네마틱 실험</sub> | **EVOLVING**<br><sub>1일 전</sub> | **42** | 3D WEB |
 | [Rotation Talk](https://github.com/juhwan7/rotation-talk-roblox)<br><sub>40명이 짧은 주기로 만나고 회전하는 소셜 대화 게임을 시스템·경제·안전까지 함께 실험</sub> | **ACTIVE**<br><sub>3일 전</sub> | **5** | SOCIAL GAME |
 | [Evo 3D Game](https://github.com/juhwan7/evo-3d-game)<br><sub>여러 AI가 서로 작업을 감시하고 복구하며 장기적으로 스스로 확장하는 저사양 3D 게임 실험</sub> | **EVOLVING**<br><sub>2일 전</sub> | **13** | AUTONOMOUS |
 
@@ -42,12 +42,12 @@
 
 | 시각 | 프로젝트 | 실제 변경 |
 |---|---|---|
-| 8분 전 | [Stock AutoResearch](https://github.com/juhwan7/stock-autoresearch) | [observe: record 10-minute supervisor checkpoint](https://github.com/juhwan7/stock-autoresearch/commit/acde59b62be62b7c4169323cbf418f2c69d62b1b) |
-| 8분 전 | [KMB Lab](https://github.com/juhwan7/korea-market-behavior-lab) | [audit: falsify stale scheduler-disabled evidence semantics](https://github.com/juhwan7/korea-market-behavior-lab/commit/7d2bbae8ab11fe00929d6aea14f4c7d45929e1e1) |
-| 18분 전 | [Stock AutoResearch](https://github.com/juhwan7/stock-autoresearch) | [observe: record 10-minute supervisor checkpoint](https://github.com/juhwan7/stock-autoresearch/commit/352ec2d32471e60f803e6e9c5d9e7a50a9c2e352) |
-| 38분 전 | [KMB Lab](https://github.com/juhwan7/korea-market-behavior-lab) | [sre: distinguish explicit scheduler disable from stale evidence](https://github.com/juhwan7/korea-market-behavior-lab/commit/9d8d92f5fc589e775c116112058dbf579ddb27f6) |
-| 21시간 전 | [STARSHIP](https://github.com/juhwan7/starship-launch-experience) | [Fix fallback runtime indexing and add speed cycle](https://github.com/juhwan7/starship-launch-experience/commit/4de3288c496ed985de48990163e105b1124819de) |
-| 21시간 전 | [STARSHIP](https://github.com/juhwan7/starship-launch-experience) | [Clamp startup progress and model loading ratio](https://github.com/juhwan7/starship-launch-experience/commit/8089783422b09a01a835329fe46c3d89d1a581c3) |
+| 5분 전 | [Stock AutoResearch](https://github.com/juhwan7/stock-autoresearch) | [observe: record 10-minute supervisor checkpoint](https://github.com/juhwan7/stock-autoresearch/commit/414d3c5438a3a60c9918feb802ed2042e66bd1f1) |
+| 15분 전 | [Stock AutoResearch](https://github.com/juhwan7/stock-autoresearch) | [observe: record 10-minute supervisor checkpoint](https://github.com/juhwan7/stock-autoresearch/commit/9b6eaf703ec3eb8e72610570010391e9b79181ad) |
+| 27분 전 | [KMB Lab](https://github.com/juhwan7/korea-market-behavior-lab) | [product: refresh market intelligence](https://github.com/juhwan7/korea-market-behavior-lab/commit/ac21cc5218176dbb0cdc095b7651c7be0fdb81ff) |
+| 32분 전 | [KMB Lab](https://github.com/juhwan7/korea-market-behavior-lab) | [maintenance: test isolated official-news failure ledger](https://github.com/juhwan7/korea-market-behavior-lab/commit/75b9311238372a134038302c90721f34a472a4d4) |
+| 1일 전 | [STARSHIP](https://github.com/juhwan7/starship-launch-experience) | [Fix fallback runtime indexing and add speed cycle](https://github.com/juhwan7/starship-launch-experience/commit/4de3288c496ed985de48990163e105b1124819de) |
+| 1일 전 | [STARSHIP](https://github.com/juhwan7/starship-launch-experience) | [Clamp startup progress and model loading ratio](https://github.com/juhwan7/starship-launch-experience/commit/8089783422b09a01a835329fe46c3d89d1a581c3) |
 | 2일 전 | [Evo 3D Game](https://github.com/juhwan7/evo-3d-game) | [publish current autonomous development status](https://github.com/juhwan7/evo-3d-game/commit/ff5420af5b318e5e29f2ee663cbebbde2fc2255c) |
 | 2일 전 | [Evo 3D Game](https://github.com/juhwan7/evo-3d-game) | [auto-deploy experimental after static checks](https://github.com/juhwan7/evo-3d-game/commit/a70d6fb59e13715089ac64c0a772f95d9f4d487c) |
 
@@ -70,6 +70,6 @@ Python · Java · Spring Boot · JavaScript · Three.js · Roblox/Luau · GitHub
 
 ---
 
-<sub>Living Profile · 2026-09-30 07:19 KST 생성 · 활동 변화는 약 3시간 간격, Daily Mutation은 하루 1회 전환</sub>
+<sub>Living Profile · 2026-09-30 14:37 KST 생성 · 활동 변화는 약 3시간 간격, Daily Mutation은 하루 1회 전환</sub>
 
 <!-- generated by scripts/update_profile.py; edit profile.config.yml rather than generated sections -->
