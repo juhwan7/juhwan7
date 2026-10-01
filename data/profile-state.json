@@ -1,11 +1,27 @@
 {
-  "fingerprint": "ea18e9e97b9495ebe473d432346d6bc263382a93d9a729fa179f0e0ed68f94e3",
-  "generated_at": "2026-10-01T21:01:20+09:00",
-  "featured_repo": "market-memo",
+  "fingerprint": "758ad01e88f5634bad7335b4660ea65581c76b4ad3b5fa1ee36355e5b1270b34",
+  "generated_at": "2026-10-02T03:26:39.347793+09:00",
+  "featured_repo": "starship-launch-experience",
   "repositories": {
     "stock-autoresearch": {
       "default_branch": "main",
       "commits": [],
+      "error": null,
+      "captured_at": "2026-10-01T21:01:20+09:00"
+    },
+    "korea-market-behavior-lab": {
+      "default_branch": "main",
+      "commits": [
+        {
+          "sha": "5f4fb14d42067cd01ff63e93eb5122f1b4ded14a",
+          "message": "product: add AI research status and topic filters",
+          "url": "https://github.com/juhwan7/korea-market-behavior-lab/commit/5f4fb14d42067cd01ff63e93eb5122f1b4ded14a",
+          "date": "2026-09-30T14:56:05Z",
+          "paths": [
+            "src/kmb_lab/pages_v3.py"
+          ]
+        }
+      ],
       "error": null,
       "captured_at": "2026-10-01T21:01:20+09:00"
     },
@@ -125,22 +141,6 @@
           "date": "2026-09-27T21:44:46Z",
           "paths": [
             ".github/workflows/deploy-pages.yml"
-          ]
-        }
-      ],
-      "error": null,
-      "captured_at": "2026-10-01T21:01:20+09:00"
-    },
-    "korea-market-behavior-lab": {
-      "default_branch": "main",
-      "commits": [
-        {
-          "sha": "5f4fb14d42067cd01ff63e93eb5122f1b4ded14a",
-          "message": "product: add AI research status and topic filters",
-          "url": "https://github.com/juhwan7/korea-market-behavior-lab/commit/5f4fb14d42067cd01ff63e93eb5122f1b4ded14a",
-          "date": "2026-09-30T14:56:05Z",
-          "paths": [
-            "src/kmb_lab/pages_v3.py"
           ]
         }
       ],
