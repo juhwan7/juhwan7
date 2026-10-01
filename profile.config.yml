@@ -1,67 +1,64 @@
 owner: juhwan7
 timezone: Asia/Seoul
-seed_date: 2026-09-29
-
-refresh:
-  lookback_days: 14
-  recent_limit: 8
-  recent_max_per_repo: 2
-
+seed_date: '2026-09-29'
 projects:
   - repo: stock-autoresearch
     title: Stock AutoResearch
-    lane: MARKET AI
-    description: 10분 시장 감시, A/B 상호검증, 이슈 추적과 자동복구가 이어지는 자율 리서치 시스템
+    accent: '#27b9bd'
+    visual: 시장 신호를 사건의 변화로 연결하는 관측 장치
+    hook: 뉴스가 아니라, 사건이 변하는 과정을 기억한다면?
+    description: 시장 관측과 이슈 추적을 연결하는 리서치 시스템. A/B의 탐색·반증 기록과 자동복구 경로를 함께 남깁니다.
+    stage: 공개 리서치 화면 · 실시간 수집 정상 여부는 별도 확인
+    evidence_url: https://github.com/juhwan7/stock-autoresearch/blob/main/README.md
     live_url: https://juhwan7.github.io/stock-autoresearch/
+    live_label: 관측소 열기
   - repo: korea-market-behavior-lab
-    title: KMB Lab
-    lane: BEHAVIOR
-    description: 5개의 AI가 매집·분배·수급 행동 가설을 서로 검증하고 실패 기록까지 공유하는 시장 행동 연구소
+    title: Korea Market Behavior Lab
+    accent: '#e6a34e'
+    visual: 사실·추정·반례를 분리하는 검증 게이트
+    hook: AI가 서로 동의하는 대신, 서로의 가설을 깨뜨리면?
+    description: 가격·거래량·수급에서 행동 가설을 만들고 근거와 반례로 검증하는 시장 연구소. 공개 데이터로 특정 계좌의 실제 보유량이나 의도를 알아낸다고 전제하지 않습니다.
+    stage: 연구·구현 중 · 추정 모델의 유효성 검증 진행
+    evidence_url: https://github.com/juhwan7/korea-market-behavior-lab/blob/main/src/kmb_lab/quant.py
+    live_url: https://juhwan7.github.io/korea-market-behavior-lab/
+    live_label: 연구소 열기
   - repo: market-memo
     title: Market Memo
-    lane: MEMORY
-    description: 시장 이슈와 기업·테마·정책을 구조화해 다음 판단으로 이어지게 만드는 개인 시장 기억 저장소
+    accent: '#99b479'
+    visual: 근거와 반론이 남는 기억 선반
+    hook: 어제의 판단이 오늘의 검증 자료로 남는다면?
+    description: 한국·미국 시장과 산업·기업 이슈를 원문, 배경, 반론, 다음 확인사항으로 연결하는 개인 시장 아카이브.
+    stage: 공개 학습 아카이브
+    evidence_url: https://github.com/juhwan7/market-memo/blob/main/README.md
     live_url: https://juhwan7.github.io/market-memo/
+    live_label: 기록 탐색
   - repo: starship-launch-experience
     title: STARSHIP
-    lane: 3D WEB
-    description: 발사 준비부터 hot-staging까지 브라우저에서 재생하는 장편 실시간 WebGL 시네마틱 실험
+    accent: '#f1784c'
+    visual: 브라우저 속 발사 실험을 표현한 미니어처 발사대
+    hook: 이 발사 장면이 영상이 아니라, 브라우저에서 계산된다면?
+    description: 발사 준비부터 상승·분리까지 이어지는 WebGL 시네마틱 실험. 장면, 카메라, 재생속도를 브라우저에서 제어합니다.
+    stage: 공개 WebGL 데모 · 브라우저 검사 통과 기록
+    evidence_url: https://github.com/juhwan7/starship-launch-experience/actions/workflows/browser-smoke.yml
     live_url: https://juhwan7.github.io/starship-launch-experience/
+    live_label: 발사 경험
   - repo: rotation-talk-roblox
     title: Rotation Talk
-    lane: SOCIAL GAME
-    description: 40명이 짧은 주기로 만나고 회전하는 소셜 대화 게임을 시스템·경제·안전까지 함께 실험
+    accent: '#a797c3'
+    visual: 두 선택이 만나는 회전 테이블
+    hook: 같은 질문에 같은 답을 고른 두 사람이 만나면?
+    description: 학교 강당에서 질문을 고르고, 새로운 상대를 만나는 Roblox 소셜 선택 게임. 매칭·점수·평판·저장 규칙을 함께 설계했습니다.
+    stage: Studio 프로토타입 · 새 강당 화면·다중 접속 검증 전
+    evidence_url: https://github.com/juhwan7/rotation-talk-roblox/blob/main/README.md
+    live_url: https://github.com/juhwan7/rotation-talk-roblox/releases/latest
+    live_label: Studio 빌드 받기
   - repo: evo-3d-game
-    title: Evo 3D Game
-    lane: AUTONOMOUS
-    description: 여러 AI가 서로 작업을 감시하고 복구하며 장기적으로 스스로 확장하는 저사양 3D 게임 실험
-
-daily_questions:
-  - 오늘 가장 많이 바뀐 코드는 기능을 늘렸나, 판단을 더 정확하게 만들었나?
-  - 시스템이 멈췄을 때 사람을 부르지 않고 스스로 복구할 수 있는가?
-  - 같은 실패를 다시 하지 않도록 실패 자체가 다음 입력으로 남고 있는가?
-  - 데이터가 많아진 만큼 사용자의 판단 시간은 실제로 줄어들고 있는가?
-  - AI가 서로 동의하는 것보다 서로 틀렸음을 찾아내는 구조가 더 강한가?
-  - 지금 가장 복잡한 기능 하나를 지운다면 오히려 시스템이 좋아질 수 있는가?
-  - 화면에서 5초 안에 지금 중요한 변화 하나를 찾을 수 있는가?
-  - 자동화가 편의 기능을 넘어 프로젝트의 기억과 판단까지 이어받고 있는가?
-  - 최신 기능보다 아직 검증되지 않은 가정 하나를 먼저 깨볼 수 있는가?
-  - 프로젝트끼리 데이터를 공유하면 전혀 다른 실험에서 새 신호가 나올 수 있는가?
-  - 살아있는 시스템의 기준을 커밋 수가 아니라 복구력으로 정의할 수 있는가?
-  - 오늘 만든 기능이 일주일 뒤에도 필요한지 자동으로 다시 심사할 수 있는가?
-
-daily_palettes:
-  - accent: "#F97316"
-    accent2: "#8B5CF6"
-  - accent: "#0EA5E9"
-    accent2: "#14B8A6"
-  - accent: "#E11D48"
-    accent2: "#F59E0B"
-  - accent: "#7C3AED"
-    accent2: "#22C55E"
-  - accent: "#2563EB"
-    accent2: "#EC4899"
-  - accent: "#059669"
-    accent2: "#6366F1"
-  - accent: "#D97706"
-    accent2: "#0891B2"
+    title: Evo 3D Game / VOID HARVEST
+    accent: '#91b58c'
+    visual: 플레이어와 적이 파편을 놓고 경쟁하는 작은 생태계
+    hook: 경험치를 적도 먹을 수 있다면?
+    description: 플레이어와 적이 같은 파편을 놓고 경쟁하는 Three.js 생존 게임 실험. 적의 자원 소비와 변이가 선택에 어떤 영향을 주는지 탐구합니다.
+    stage: 공개 프로토타입 · 실제 런타임 검증 범위 제한
+    evidence_url: https://github.com/juhwan7/evo-3d-game/blob/main/data/ai/state.json
+    live_url: https://juhwan7.github.io/evo-3d-game/
+    live_label: 프로토타입 보기

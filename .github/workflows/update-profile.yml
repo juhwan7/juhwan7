@@ -1,59 +1,56 @@
-name: Living Profile Mutation
-
+name: Systems in Motion
 on:
   schedule:
     - cron: "8 15 * * *"
     - cron: "17 */3 * * *"
   workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [main]
     paths:
       - profile.config.yml
-      - scripts/update_profile.py
+      - scripts/**
+      - tests/**
+      - requirements-profile.txt
       - .github/workflows/update-profile.yml
-
 permissions:
   contents: write
-
 concurrency:
   group: living-profile
-  cancel-in-progress: true
-
+  cancel-in-progress: false
 jobs:
-  mutate-profile:
+  update:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
-
-      - name: Install dependency
-        run: python -m pip install --disable-pip-version-check pyyaml
-
-      - name: Generate living profile
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-profile.txt
+      - name: Install renderer and collector
+        run: python -m pip install --disable-pip-version-check -r requirements-profile.txt
+      - name: Build missing assets only
+        run: python scripts/render_lab.py
+      - name: Verify animation, daily selection and failure recovery
+        run: python -m unittest discover -s tests -v
+      - name: Collect public projects and generate profile
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: python scripts/update_profile.py
-
-      - name: Commit only real mutations
+      - name: Publish only changed content
         shell: bash
         run: |
           set -euo pipefail
-
-          if git diff --quiet -- README.md assets/lab-orbit.svg; then
-            echo "No mutation to publish."
+          git add README.md assets data/profile-state.json
+          if git diff --cached --quiet; then
+            echo "No content change to publish."
             exit 0
           fi
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md assets/lab-orbit.svg
-          git commit -m "chore: mutate living profile"
-          git push
+          git commit -m "chore(profile): refresh public project snapshot"
+          # A concurrent human edit is preserved by rebasing; a genuine conflict
+          # fails the job rather than overwriting the edit.
+          git pull --rebase origin main
+          git push origin HEAD:main

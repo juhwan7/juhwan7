@@ -1,0 +1,151 @@
+{
+  "fingerprint": "ea18e9e97b9495ebe473d432346d6bc263382a93d9a729fa179f0e0ed68f94e3",
+  "generated_at": "2026-10-01T21:01:20+09:00",
+  "featured_repo": "market-memo",
+  "repositories": {
+    "stock-autoresearch": {
+      "default_branch": "main",
+      "commits": [],
+      "error": null,
+      "captured_at": "2026-10-01T21:01:20+09:00"
+    },
+    "market-memo": {
+      "default_branch": "main",
+      "commits": [
+        {
+          "sha": "68c0ea66490ab15c15368ce9d19979f03ff7fe43",
+          "message": "시황: 2026-09-25 오늘의 핫이슈 3가지 추가",
+          "url": "https://github.com/juhwan7/market-memo/commit/68c0ea66490ab15c15368ce9d19979f03ff7fe43",
+          "date": "2026-09-24T23:44:59Z",
+          "paths": [
+            "시황/글로벌/2026-09-25-오늘의-핫이슈-3가지.md"
+          ]
+        },
+        {
+          "sha": "1f49aa9b3ae7361c8cae70ecec38569da270310b",
+          "message": "Index 2026-09-25 morning briefing",
+          "url": "https://github.com/juhwan7/market-memo/commit/1f49aa9b3ae7361c8cae70ecec38569da270310b",
+          "date": "2026-09-24T21:34:18Z",
+          "paths": [
+            "시황/글로벌/README.md"
+          ]
+        }
+      ],
+      "error": null,
+      "captured_at": "2026-10-01T21:01:20+09:00"
+    },
+    "starship-launch-experience": {
+      "default_branch": "main",
+      "commits": [
+        {
+          "sha": "4de3288c496ed985de48990163e105b1124819de",
+          "message": "Fix fallback runtime indexing and add speed cycle",
+          "url": "https://github.com/juhwan7/starship-launch-experience/commit/4de3288c496ed985de48990163e105b1124819de",
+          "date": "2026-09-29T00:51:03Z",
+          "paths": [
+            "fallback.html"
+          ]
+        },
+        {
+          "sha": "8089783422b09a01a835329fe46c3d89d1a581c3",
+          "message": "Clamp startup progress and model loading ratio",
+          "url": "https://github.com/juhwan7/starship-launch-experience/commit/8089783422b09a01a835329fe46c3d89d1a581c3",
+          "date": "2026-09-29T00:50:59Z",
+          "paths": [
+            "src/main.js"
+          ]
+        }
+      ],
+      "error": null,
+      "captured_at": "2026-10-01T21:01:20+09:00"
+    },
+    "rotation-talk-roblox": {
+      "default_branch": "main",
+      "commits": [
+        {
+          "sha": "b5ea777886c1ae5cca24e65aa6f650d29d5740dc",
+          "message": "ci: publish downloadable Studio place after main updates",
+          "url": "https://github.com/juhwan7/rotation-talk-roblox/commit/b5ea777886c1ae5cca24e65aa6f650d29d5740dc",
+          "date": "2026-09-26T21:31:49Z",
+          "paths": [
+            ".github/workflows/studio-download.yml",
+            "CHANGELOG.md",
+            "README.md",
+            "docs/DECISIONS.md",
+            "docs/HANDOFF.md",
+            "docs/ROADMAP.md",
+            "tools/release-info.mjs"
+          ]
+        },
+        {
+          "sha": "5ad26eca95c5beeb4b8fda00b6313be3625750b2",
+          "message": "feat: expand school auditorium to twenty tables and forty players",
+          "url": "https://github.com/juhwan7/rotation-talk-roblox/commit/5ad26eca95c5beeb4b8fda00b6313be3625750b2",
+          "date": "2026-09-26T21:18:58Z",
+          "paths": [
+            "CHANGELOG.md",
+            "README.md",
+            "docs/ART_DIRECTION.md",
+            "docs/DECISIONS.md",
+            "docs/GAME_DESIGN.md",
+            "docs/HANDOFF.md",
+            "docs/QA.md",
+            "docs/ROADMAP.md",
+            "docs/TEST_RESULTS.md",
+            "src/server/Main.server.luau",
+            "src/server/WorldService.luau",
+            "src/shared/Config.luau",
+            "src/shared/Rules.luau",
+            "tests/integration-body.luau",
+            "tests/matching.spec.luau",
+            "tests/rules.spec.luau",
+            "tools/test.mjs"
+          ]
+        }
+      ],
+      "error": null,
+      "captured_at": "2026-10-01T21:01:20+09:00"
+    },
+    "evo-3d-game": {
+      "default_branch": "main",
+      "commits": [
+        {
+          "sha": "ff5420af5b318e5e29f2ee663cbebbde2fc2255c",
+          "message": "docs: publish current autonomous development status",
+          "url": "https://github.com/juhwan7/evo-3d-game/commit/ff5420af5b318e5e29f2ee663cbebbde2fc2255c",
+          "date": "2026-09-27T21:45:03Z",
+          "paths": [
+            "README.md"
+          ]
+        },
+        {
+          "sha": "a70d6fb59e13715089ac64c0a772f95d9f4d487c",
+          "message": "ci: auto-deploy experimental after static checks",
+          "url": "https://github.com/juhwan7/evo-3d-game/commit/a70d6fb59e13715089ac64c0a772f95d9f4d487c",
+          "date": "2026-09-27T21:44:46Z",
+          "paths": [
+            ".github/workflows/deploy-pages.yml"
+          ]
+        }
+      ],
+      "error": null,
+      "captured_at": "2026-10-01T21:01:20+09:00"
+    },
+    "korea-market-behavior-lab": {
+      "default_branch": "main",
+      "commits": [
+        {
+          "sha": "5f4fb14d42067cd01ff63e93eb5122f1b4ded14a",
+          "message": "product: add AI research status and topic filters",
+          "url": "https://github.com/juhwan7/korea-market-behavior-lab/commit/5f4fb14d42067cd01ff63e93eb5122f1b4ded14a",
+          "date": "2026-09-30T14:56:05Z",
+          "paths": [
+            "src/kmb_lab/pages_v3.py"
+          ]
+        }
+      ],
+      "error": null,
+      "captured_at": "2026-10-01T21:01:20+09:00"
+    }
+  }
+}
