@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="140" viewBox="0 0 1200 140" role="img" aria-label="오늘의 프로젝트 STARSHIP">
-<rect width="1200" height="140" rx="8" fill="#f4f4eb"/><rect width="7" height="140" fill="#f1784c"/>
-<circle cx="64" cy="70" r="26" fill="none" stroke="#f1784c" stroke-width="2"/>
-<text x="64" y="79" text-anchor="middle" fill="#253638" font-family="sans-serif" font-size="24">04</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="140" viewBox="0 0 1200 140" role="img" aria-label="오늘의 프로젝트 Rotation Talk">
+<rect width="1200" height="140" rx="8" fill="#f4f4eb"/><rect width="7" height="140" fill="#a797c3"/>
+<circle cx="64" cy="70" r="26" fill="none" stroke="#a797c3" stroke-width="2"/>
+<text x="64" y="79" text-anchor="middle" fill="#253638" font-family="sans-serif" font-size="24">05</text>
 <text x="114" y="42" fill="#697d78" font-family="sans-serif" font-size="14" letter-spacing="3">TODAY'S SPOTLIGHT</text>
-<text x="110" y="94" fill="#253638" font-family="sans-serif" font-size="37" font-weight="700">STARSHIP</text>
-<g transform="translate(1000 26)" stroke="#f1784c" fill="none" stroke-width="2"><ellipse cx="48" cy="44" rx="66" ry="25"/><ellipse cx="48" cy="44" rx="37" ry="44"/><path d="M-18 44h132M48 0v88"/><circle cx="93" cy="25" r="7" fill="#f1784c"/></g></svg>
+<text x="110" y="94" fill="#253638" font-family="sans-serif" font-size="37" font-weight="700">Rotation Talk</text>
+<g transform="translate(1000 26)" stroke="#a797c3" fill="none" stroke-width="2"><ellipse cx="48" cy="44" rx="66" ry="25"/><ellipse cx="48" cy="44" rx="37" ry="44"/><path d="M-18 44h132M48 0v88"/><circle cx="93" cy="25" r="7" fill="#a797c3"/></g></svg>

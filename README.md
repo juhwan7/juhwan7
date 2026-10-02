@@ -21,7 +21,7 @@
   <img alt="오늘 전면에 등장하는 프로젝트" src="assets/spotlight-light.svg" width="100%">
 </picture>
 
-**[STARSHIP](https://github.com/juhwan7/starship-launch-experience)** — 이 발사 장면이 영상이 아니라, 브라우저에서 계산된다면?
+**[Rotation Talk](https://github.com/juhwan7/rotation-talk-roblox)** — 같은 질문에 같은 답을 고른 두 사람이 만나면?
 
 <sub>한국 시간의 날짜에 따라 대표 프로젝트와 강조색이 바뀝니다.</sub>
 
@@ -180,7 +180,7 @@ Python · Java · Spring Boot · JavaScript · Three.js · Roblox/Luau · GitHub
 
 ---
 
-<sub>자료 반영: 2026-10-02 03:26 KST · 약 3시간 간격 조회 / 일일 대표 전환 · 예약 실행은 지연될 수 있습니다.</sub>
+<sub>자료 반영: 2026-10-03 02:53 KST · 약 3시간 간격 조회 / 일일 대표 전환 · 예약 실행은 지연될 수 있습니다.</sub>
 
 <sub>프로젝트 단계는 검토한 구현 범위입니다. 최근 커밋이나 배포 기록만으로 서비스 정상·게임 운영·AI의 현재 실행 여부를 판단하지 않습니다.</sub>
 
