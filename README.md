@@ -21,7 +21,7 @@
   <img alt="오늘 전면에 등장하는 프로젝트" src="assets/spotlight-light.svg" width="100%">
 </picture>
 
-**[Korea Market Behavior Lab](https://github.com/juhwan7/korea-market-behavior-lab)** — AI가 서로 동의하는 대신, 서로의 가설을 깨뜨리면?
+**[Market Memo](https://github.com/juhwan7/market-memo)** — 어제의 판단이 오늘의 검증 자료로 남는다면?
 
 <sub>한국 시간의 날짜에 따라 대표 프로젝트와 강조색이 바뀝니다.</sub>
 
@@ -180,7 +180,7 @@ Python · Java · Spring Boot · JavaScript · Three.js · Roblox/Luau · GitHub
 
 ---
 
-<sub>자료 반영: 2026-10-06 06:58 KST · 약 3시간 간격 조회 / 일일 대표 전환 · 예약 실행은 지연될 수 있습니다.</sub>
+<sub>자료 반영: 2026-10-07 00:59 KST · 약 3시간 간격 조회 / 일일 대표 전환 · 예약 실행은 지연될 수 있습니다.</sub>
 
 <sub>프로젝트 단계는 검토한 구현 범위입니다. 최근 커밋이나 배포 기록만으로 서비스 정상·게임 운영·AI의 현재 실행 여부를 판단하지 않습니다.</sub>
 
