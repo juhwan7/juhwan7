@@ -1,7 +1,7 @@
 {
-  "fingerprint": "8df3bad72b6ed2c302270f550f473dfbe4d56d5ff11d3909c8300298a33f3c36",
-  "generated_at": "2026-10-10T03:23:18.011809+09:00",
-  "featured_repo": "evo-3d-game",
+  "fingerprint": "7c5e6dab2fe41d1d2bb836c23887b6ab2bcc4a185ddd3e8d7038586e53c75a68",
+  "generated_at": "2026-10-11T02:21:53.634212+09:00",
+  "featured_repo": "stock-autoresearch",
   "repositories": {
     "stock-autoresearch": {
       "default_branch": "main",
