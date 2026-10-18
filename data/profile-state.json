@@ -1,7 +1,7 @@
 {
-  "fingerprint": "b14e4b2e0af050b6cbd6421d4107857242d53eb1caada8d38cb8938cb13f2491",
-  "generated_at": "2026-10-18T00:39:16.549035+09:00",
-  "featured_repo": "korea-market-behavior-lab",
+  "fingerprint": "e011b252ee89e335231b6a1bb0f6065d145cdad37b99afc74bf660d6f3ae830d",
+  "generated_at": "2026-10-19T00:55:20.401235+09:00",
+  "featured_repo": "market-memo",
   "repositories": {
     "stock-autoresearch": {
       "default_branch": "main",
