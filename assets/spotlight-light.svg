@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="140" viewBox="0 0 1200 140" role="img" aria-label="오늘의 프로젝트 Korea Market Behavior Lab">
-<rect width="1200" height="140" rx="8" fill="#f4f4eb"/><rect width="7" height="140" fill="#e6a34e"/>
-<circle cx="64" cy="70" r="26" fill="none" stroke="#e6a34e" stroke-width="2"/>
-<text x="64" y="79" text-anchor="middle" fill="#253638" font-family="sans-serif" font-size="24">02</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="140" viewBox="0 0 1200 140" role="img" aria-label="오늘의 프로젝트 Market Memo">
+<rect width="1200" height="140" rx="8" fill="#f4f4eb"/><rect width="7" height="140" fill="#99b479"/>
+<circle cx="64" cy="70" r="26" fill="none" stroke="#99b479" stroke-width="2"/>
+<text x="64" y="79" text-anchor="middle" fill="#253638" font-family="sans-serif" font-size="24">03</text>
 <text x="114" y="42" fill="#697d78" font-family="sans-serif" font-size="14" letter-spacing="3">TODAY'S SPOTLIGHT</text>
-<text x="110" y="94" fill="#253638" font-family="sans-serif" font-size="37" font-weight="700">Korea Market Behavior Lab</text>
-<g transform="translate(1000 26)" stroke="#e6a34e" fill="none" stroke-width="2"><ellipse cx="48" cy="44" rx="66" ry="25"/><ellipse cx="48" cy="44" rx="37" ry="44"/><path d="M-18 44h132M48 0v88"/><circle cx="93" cy="25" r="7" fill="#e6a34e"/></g></svg>
+<text x="110" y="94" fill="#253638" font-family="sans-serif" font-size="37" font-weight="700">Market Memo</text>
+<g transform="translate(1000 26)" stroke="#99b479" fill="none" stroke-width="2"><ellipse cx="48" cy="44" rx="66" ry="25"/><ellipse cx="48" cy="44" rx="37" ry="44"/><path d="M-18 44h132M48 0v88"/><circle cx="93" cy="25" r="7" fill="#99b479"/></g></svg>
