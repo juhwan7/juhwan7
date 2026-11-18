@@ -1,7 +1,7 @@
 {
-  "fingerprint": "365e30d3884c90c32c2578e40ff4648b1ba6060fc8690f508d0530f1d9a0fe8f",
-  "generated_at": "2026-11-18T01:06:11.099813+09:00",
-  "featured_repo": "market-memo",
+  "fingerprint": "16d894d1f4eb436953cc434f358a1de9a8cfd5f507203fd5949c1accdab31eb4",
+  "generated_at": "2026-11-19T05:36:42.612037+09:00",
+  "featured_repo": "starship-launch-experience",
   "repositories": {
     "stock-autoresearch": {
       "default_branch": "main",
